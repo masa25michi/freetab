@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Simple New Tab For Chrome Extension">
+    <meta name="author" content="Masamichi">
+
+    <title>New Tab</title>
+    <script src="asset/js/jquery-3.2.1.min.js"></script>
+
+    <script src="asset/js/bootstrap.min.js"></script>
+    <script src="asset/js/reallySimpleWeather.js" async></script>
+    <script src="asset/js/bootstrap-select.min.js" async></script>
+    <script src="asset/js/jquery-ui.js"></script>
+    <script src="asset/js/anime.min.js"></script>
+    <!-- <script src="asset/js/bootstrap-toggle.min.js" async></script> -->
+
+    <!-- <script src="asset/js/bootstrap-switch.min.js" async></script> -->
+
+    <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
+
+    <link href="asset/css/style.css" rel="stylesheet">
+    <!-- <link href="asset/css/bootstrap2-toggle.min.css" rel="stylesheet"> -->
+    <link href="asset/css/bootstrap-select.min.css" rel="stylesheet">
+    <link href="asset/font/weather-icons/css/weather-icons.min.css" rel="stylesheet">
+    <!-- <link href="asset/font/weather-icons/css/bootstrap-switch.min.css" rel="stylesheet"> -->
+    <link href="asset/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="asset/font/css/font-awesome.min.css">
+
+
+    <style>
+    .btn-sm:hover{
+  	    color:white;
+  	    font-weight: bold;
+  	}
+      ul li{
+        /*display: inline-block;*/
+        /*width: 20px;*/
+        /*height:20px;*/
+        display: inline;
+        list-style-type: none;
+        /*padding-right: 20px;*/
+        float: left;
+      }
+      .selectpicker option{
+      	width:20px;
+      	border:1px solid red;
+      }
+      .right-bottom{
+        position:fixed;
+        bottom:0px;
+        right:6px;
+      }
+      .app{
+        /*background-color: white;*/
+        /*border-radius: 10px;*/
+        /*width:50%;*/
+      }
+      .apps{
+        width:100%;
+        position:relative;
+        margin:10px;
+        left:5%;
+      }
+      select{
+        color:black;
+      }
+
+    </style>
+</head>
+
+<body>
+
+    <video autoplay="autoplay">
+        <source src='/asset/background-video.mp4' type='video/mp4' />
+    </video>
+
+    <div class='sidebar-div'>
+        <div class="dropdown">
+          <a href="#menu-toggle" id="menu-toggle" class="btn btn-primary-outline dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <i class="fa fa-cog fa-2x" id='setting' aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- <div class="dropdown"> -->
+        <div id="wrapper" >
+          <div id="sidebar-wrapper">
+                <div class='sidebar-menu'>
+                    <table>
+                        <tr class='btn btn-sm active' id='general_button'>
+                            <td>General</td>
+                        </tr><br>
+                        <!-- <tr class='btn btn-sm' id='background_button'> -->
+                            <!-- <td >Background</td> -->
+                        <!-- </tr> -->
+                        <tr class='btn btn-sm' id='help_button'>
+                            <td >Help</td>
+                        </tr>
+                        <tr class='btn btn-sm' id='feedback_button'>
+                            <td >Donate</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="sidebar-nav nav-general">
+                    <table>
+                      <tr>
+                          <td><hr style='opacity:0;'></td>
+                      </tr>
+                      <tr>
+                            <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Display Options</td>
+                      </tr>
+                    <!-- <tr><td class='key'>Blur</td>
+                        <td>
+	                        <label class="switch">
+                                <input id='blur_button' type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+    			              </td>
+                    </tr> -->
+                    <tr>
+                        <td>Date</td><td>
+                            <label class="switch value">
+                                <input id='date_button' type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Weather</td><td>
+                            <label class="switch value">
+                                <input id='weather_button' type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Slideshow</td><td>
+                            <label class="switch value">
+                                <input id='slideshow_button' type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Search</td><td>
+                            <label class="switch value">
+                                <input id='search_button' type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Memo</td><td>
+                            <label class="switch value">
+                                <input id='comment_button' type="checkbox">
+                                <div class="slider round"></div>
+                            </label>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Color Theme</td>
+                        <td>
+                        	<input id='changecolor' type="color" name="favcolor" value="#ff0000" style='margin-left: 15px;'>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><hr style='opacity:0;'></td>
+                    </tr>
+                    <tr>
+                          <td style='opacity:0.7;margin-top:-10px; position:absolute;'>Weather Options</td>
+                    </tr>
+                    <tr><td><br></td></tr>
+                    <tr>
+                        <td>Weather Degree</td>
+                        <td class='key'>
+                          <select class='select-degree'>
+                            <option value='1' id = 'celsius_button2'>&#8451;</option>
+                            <option value='2' id = 'fah_button2'>&#8457;</option>
+                          </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td class='key'>
+                          <select class='select-degree-size'>
+                            <option value='size_8pt' id = 'size_8'>8pt</option>
+                            <option value='size_9pt' id = 'size-9'>9pt</option>
+                            <option value='size_10pt' id = 'size-10'>10pt</option>
+                            <option value='size_12pt' id = 'size-12'>12pt</option>
+                            <option value='size_14pt' id = 'size-14'>14pt</option>
+                            <option value='size_18pt' id = 'size-18'>18pt</option>
+                            <option value='size_24pt' id = 'size-24'>24pt</option>
+                            <option value='size_36pt' id = 'size-36'>36pt</option>
+                            <option value='size_48pt' id = 'size-48'>48pt</option>
+                          </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Reset</td>
+                        <td><input id='refresh_weather_button' class='btn btn-primary btn-sm' value='Reset'></td>
+                    </tr>
+                    <!-- <tr>
+                        <td><hr style='opacity:0;'></td>
+                    </tr>
+                    <tr><td><br></td></tr>
+                    <tr>
+                          <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Clock Options</td>
+                    </tr>
+                    <tr>
+                        <td>Hour</td>
+                        <td class='key'>
+                          <select class='select-clock-hour'>
+                            <option value='1' id = 'celsius_button'>24-hr</option>
+                            <option value='2' id = 'fah_button'>12-hr</option>
+                          </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Format</td>
+                        <td class='key'>
+                          <select class='select-clock-format'>
+                            <option value='1' id = 'celsius_button'>H:M</option>
+                            <option value='2' id = 'fah_button'>H:M:S</option>
+                          </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td class='key'>
+                          <select class='select-clock-size'>
+                            <option value='1' id = 'celsius_button'>60pt</option>
+                            <option value='2' id = 'fah_button'>72pt</option>
+                            <option value='3' id = 'fah_button'>84pt</option>
+                            <option value='4' id = 'fah_button'>96pt</option>
+                            <option value='5' id = 'fah_button'>108pt</option>
+                            <option value='6' id = 'fah_button'>120pt</option>
+                            <option value='6' id = 'fah_button'>132pt</option>
+                          </select>
+                        </td>
+                    </tr>
+
+                    <tr><td><br><br><br></td></tr>
+                    <tr>
+                          <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Date Options</td>
+                    </tr>
+                    <tr>
+                        <td>Format</td>
+                        <td class='key'>
+                          <select class='select-date-format'>
+                            <option value='1' id = 'celsius_button'>Y/M/D</option>
+                            <option value='2' id = 'fah_button'>M/D/Y</option>
+                            <option value='3' id = 'fah_button'>D/M/Y</option>
+                            <option value='4' id = 'fah_button'>D/M/</option>
+                            <option value='5' id = 'fah_button'>M/D/</option>
+                          </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Size</td>
+                        <td class='key'>
+                          <select class='select-date-size'>
+                            <option value='1' id = 'celsius_button'>60pt</option>
+                            <option value='2' id = 'fah_button'>72pt</option>
+                            <option value='3' id = 'fah_button'>84pt</option>
+                            <option value='4' id = 'fah_button'>96pt</option>
+                            <option value='5' id = 'fah_button'>108pt</option>
+                            <option value='6' id = 'fah_button'>120pt</option>
+                            <option value='6' id = 'fah_button'>132pt</option>
+                          </select>
+                        </td>
+                    </tr> -->
+
+                    </table>
+                </div>
+                <div class="sidebar-nav nav-background">
+                    <div class='show_images'>
+                        <!-- <div class='upload_image'>
+                          <label>
+                            <input type="file" name="pic" accept="image/*" id='upload_image_input' style="display: none;">
+                            <a type="button" class="btn btn-primary btn-block">Upload</a>
+                          </label>
+                          <br>
+                          <img id='own_images' src='' style='position:absolute;opacity:0;z-index:-2;'/>
+                          <img id='own_images_dummy' src='' />
+                        </div> -->
+                    </div>
+                    
+                </div>
+                <div class="sidebar-nav nav-feedback">
+                    <h3>Thank you for your Considering a Donation!</h3>
+                    <p>I appreciate your time in considering a possible donation! Your $1 give me an energy to keep updating this application!
+                    Hope you will enjoy.<hr>Buy Me Coffee by clicking button below:)</p>
+                    <p style='width:200px;'>
+                      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="8S3KD9YSRNAYW">
+                        <input type="image" src="http://www.pngall.com/wp-content/uploads/2016/05/PayPal-Donate-Button-High-Quality-PNG.png" style='width:100px;' border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+                      </form>
+                    </p>
+                </div>
+                <div class="sidebar-nav nav-help">
+                  <h3>To Reset Position of Memo</h3>
+                  <p>Please double click the border line of the memo. It will automatically reset its position to original position which is at right-bottom corner</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+      <div class='container' id='main'>
+          <div class="row">
+            <h1 id = 'time'></h1>
+            <p id = 'displaydate'></p><br>
+            <div class="col-sm-6 " style='margin-left:13%;'>
+                <div id="imaginary_container">
+                    <div class="stylish-input-group search">
+                      <form action="https://google.com/search" method="get">
+                        <div class="form-group has-feedback">
+                          <input type="text" class="form-control" name="q" id="search" placeholder="Google Search">
+                        </div>
+                      </form>
+                    </div>
+                </div>
+            </div><br>
+            <div class="right-bottom" id='right-bottom'>
+              <div class="form-group  ui-widget-content" id = 'draggable'>
+                <textarea class="form-control" id = 'comment' type='comment' name ='comment' rows = '10' cols='25'></textarea>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="container" id='second'>
+        <div class="row apps">
+          <div class="col-sm-3 app">
+            <!-- <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"> -->
+            <a href = 'http://www.facebook.com'><i class="fa fa-facebook-official" aria-hidden="true" style='font-size:100px;'></i></a>
+          </div>
+          <div class="col-sm-3 app">
+            <a href = 'http://www.youtube.com'><i class="fa fa-youtube-play" aria-hidden="true" style='font-size:100px;'></i></a>
+          </div>
+          <div class="col-sm-3 app">
+            <a href = 'http://www.twitter.com'><i class="fa fa-twitter-square" aria-hidden="true" style='font-size:100px;'></i></a>
+          </div>
+          <div class="col-sm-3 app">
+            <a href = 'http://www.instagram.com'><i class="fa fa-instagram" aria-hidden="true" style='font-size:100px;'></i></a>
+          </div>
+        </div>
+      </div>
+    <br>
+
+    <div class="weather">
+      <p id = 'weather'>Loading...<br>Please Wait</p>
+    </div>
+
+    <footer class="footer" >
+        <div class="container" id='slideshow'>
+            <div style="text-align:center">
+                <span class="dot" id='0'></span>
+                <span class="dot" id='1'></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="asset/js/main.js"></script>
+    <script src="asset/js/readimages.js"></script>　
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "Free Style Tab",
+  "short_name": "Freetab",
+  "description": "Freetab for displaying simple new tab",
+  "version": "0.1.7.4",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+
+  "manifest_version": 2,
+  "icons": {
+    "16": "asset/img/icon.png",
+    "48": "asset/img/icon.png",
+    "128": "asset/img/icon.png"
+  },
+
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+
+
+  "browser_action": {
+    "default_icon": "asset/img/icon.png"
+  },
+
+  "background" : {
+    "scripts" : ["asset/js/background.js","asset/js/main.js","asset/js/jquery-3.2.1.min.js","asset/js/reallySimpleWeather.js"]
+  },
+  "permissions":["tabs", "http://*/*", "https://maps.googleapis.com/*", "contextMenus", "geolocation","activeTab"],
+  "offline_enabled": true
+
+}
