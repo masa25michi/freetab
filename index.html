@@ -172,7 +172,7 @@
                         <td><hr style='opacity:0;'></td>
                     </tr>
                     <tr>
-                          <td style='opacity:0.7;margin-top:-10px; position:absolute;'>Weather Options</td>
+                          <td style='opacity:0.7;margin-top:-10px; position:absolute;'>Weather</td>
                     </tr>
                     <tr><td><br></td></tr>
                     <tr>
@@ -313,28 +313,20 @@
         </div>
     </div>
 
-      <div class='container' id='main'>
+    <div class='container' id='main'>
           <div class="row">
             <h1 id = 'time'></h1>
-            <p id = 'displaydate'></p><br>
-            <div class="col-sm-6 " style='margin-left:13%;'>
-                <div id="imaginary_container">
-                    <div class="stylish-input-group search">
-                      <form action="https://google.com/search" method="get">
-                        <div class="form-group has-feedback">
-                          <input type="text" class="form-control" name="q" id="search" placeholder="Google Search">
-                        </div>
-                      </form>
-                    </div>
-                </div>
-            </div><br>
+            <h2 id = 'displaydate'></h2>
+            <br>
+            <br>
             <div class="right-bottom" id='right-bottom'>
               <div class="form-group  ui-widget-content" id = 'draggable'>
                 <textarea class="form-control" id = 'comment' type='comment' name ='comment' rows = '10' cols='25'></textarea>
               </div>
             </div>
           </div>
-      </div>
+    </div>
+
 
       <div class="container" id='second'>
         <div class="row apps">
@@ -359,8 +351,20 @@
       <p id = 'weather'>Loading...<br>Please Wait</p>
     </div>
 
-    <footer class="footer" >
+    <footer class="footer" style="margin:0px;padding:0px;">
+
         <div class="container" id='slideshow'>
+            <div class="row" style="display: table; width: 100%; ">
+                <div style="vertical-align:middle; display: table-cell;">
+                    <div class="stylish-input-group search">
+                        <form action="https://google.com/search" method="get">
+                            <div class="form-group ">
+                                <input type="text" class="input" name="q" id="search" placeholder="Google Search" style="width:30%;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <div style="text-align:center">
                 <span class="dot" id='0'></span>
                 <span class="dot" id='1'></span>
