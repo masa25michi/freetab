@@ -239,6 +239,7 @@ button {
     line-height: 1.5;
     font-size: 1rem;
     padding: .375rem .75rem;
+    cursor:pointer;
 }
 
 button::before,
@@ -274,7 +275,7 @@ button:hover {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 5px;
 }
 
 /* Track */
@@ -287,11 +288,13 @@ button:hover {
 ::-webkit-scrollbar-thumb {
     /*background: black;*/
     border-radius: 20px;
+    border:1px grey solid;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: darkgrey;
+    width: 8px;
 }
 
 
@@ -302,4 +305,14 @@ button:hover {
 }
 .news-list >li >h1 {
     font-size: 6px;
+}
+
+.delete-item {
+    color:indianred; float:right;margin-right:5%;
+    cursor: pointer;
+}
+
+#error-msg-item{
+    font-size:60%;
+    text-align: center;
 }

@@ -54,6 +54,7 @@ function initializeLocalStorage()
     var masatab_search = localStorage.getItem('show_search');
     var masatab_colortheme = localStorage.getItem('color_theme');
     var masatab_news = localStorage.getItem('show_news');
+    var masatab_items = localStorage.getItem("todo_items");
 
     if (masatab_weather != null) {
         var masatab_weather_arr = JSON.parse(masatab_weather);
@@ -131,6 +132,16 @@ function initializeLocalStorage()
         changecolortheme( masatab_colortheme_arr['color']);
     }else{
         changecolortheme('#f5eafa');
+    }
+
+    if(masatab_items !=null){
+        var masatab_items_arr = JSON.parse(masatab_items);
+        tmp_arr = masatab_items_arr['items'];
+
+        var arrayLength = tmp_arr.length;
+        for (var i = 0; i < arrayLength; i++) {
+            $('#incomplete-tasks').append('<li>'+tmp_arr[i]+'<buttton class="delete-item"><i class="far fa-minus-square fa-1x"></i></buttton></li>');
+        }
     }
 }
 function initialize()
