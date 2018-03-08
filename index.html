@@ -34,6 +34,11 @@
                 <i class="fas fa-wrench" style="color:darkgrey"></i>
             </a>
         </div>
+        <div class="news-box">
+            <ul class="news-list">
+            </ul>
+            <small>Resources from <a href="https://newsapi.org/" style="text-decoration: underline;">NewsApi.org</a></small>
+        </div>
         <div class="todo-box">
             <div class="todo-box-upper">
                 <ul id="incomplete-tasks">
@@ -81,7 +86,7 @@
                 <td>Date</td>
                 <td>
                     <label class="switch">
-                        <input class = 'setting-check' id = 'date_button' type="checkbox" name="q">
+                        <input class = 'setting-check' id = 'date_button' type="checkbox" checked>
                         <span class="slider round"></span>
                     </label>
                 </td>
@@ -104,6 +109,23 @@
                     </label>
                 </td>
             </tr>
+            <tr>
+                <td>News</td>
+                <td>
+                    <label class="switch">
+                        <input class = 'setting-check' id = 'news_button' type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Color Theme</td>
+                <td>
+                    <label class="switch">
+                        <input id='changecolor' type="color" value="#f5eafa" style="display:block; margin-left:8px;">
+                    </label>
+                </td>
+            </tr>
         </table>
     </div>
 
@@ -114,5 +136,6 @@
     <script src="asset/js/reallySimpleWeather.js" async></script>
     <script src="/asset/js/custom.js"></script>
     <script src="/asset/js/todo.js"></script>
+    <script src="/asset/js/news.js"></script>
 </body>
 </html>

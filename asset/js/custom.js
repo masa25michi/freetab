@@ -20,15 +20,30 @@ $(document).ready(function() {
             settingGeneral('.weather-box','show_weather', {'display':'block'},{'display':'none'});
         } else if(id === 'search_button' ) {
             settingGeneral('.search','show_search', {'display':'block'},{'display':'none'});
+        } else if(id === 'news_button' ) {
+            settingGeneral('.news-box','show_news', {'display':'block'},{'display':'none'});
         }
     });
 
+    $('body').on('change','#changecolor',function (e) {
+        colortheme_event(e);
+    });
 
 });
 
-function test(attribute, flag)
-{
-    $( "body" ).find( target ).prop('checked', flag);
+function colortheme_event(e){
+    var color = e.currentTarget.value;
+    changecolortheme(color);
+
+    localStorage.setItem('color_theme', JSON.stringify({'color':color}));
+}
+
+function changecolortheme(color){
+    $('body').css('color',color);
+    $('button').css('color',color);
+    $('a:link').css('color',color);
+    $('a:visited').css('color',color);
+
 }
 
 function initializeLocalStorage()
@@ -37,6 +52,8 @@ function initializeLocalStorage()
     var masatab_weather = localStorage.getItem('weather');
     var masatab_show_weather = localStorage.getItem('show_weather');
     var masatab_search = localStorage.getItem('show_search');
+    var masatab_colortheme = localStorage.getItem('color_theme');
+    var masatab_news = localStorage.getItem('show_news');
 
     if (masatab_weather != null) {
         var masatab_weather_arr = JSON.parse(masatab_weather);
@@ -92,6 +109,28 @@ function initializeLocalStorage()
     }else{
         $('#search_button').attr('checked', true);
         settingGeneral(".search", "show_search", {'display':'block'}, {});
+    }
+
+    if(masatab_news !=null){
+        var masatab_news_arr = JSON.parse(masatab_news);
+        if(masatab_news_arr['set']==true){
+            $(".news-box").css("display", "block");
+            $('#news_button').attr('checked', true);
+
+        }else{
+            $(".news-box").css("display", "none");
+            $('#news_button').attr('checked', false);
+        }
+    }else{
+        $('#news_button').attr('checked', true);
+        settingGeneral(".search", "show_news", {'display':'block'}, {});
+    }
+
+    if(masatab_colortheme !=null){
+        var masatab_colortheme_arr = JSON.parse(masatab_colortheme);
+        changecolortheme( masatab_colortheme_arr['color']);
+    }else{
+        changecolortheme('#f5eafa');
     }
 }
 function initialize()
