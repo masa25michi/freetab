@@ -1,7 +1,9 @@
 $(function(){
     $('#todo-add').click(function(){
-        $('#incomplete-tasks').append(newitem($('#new-task').val()));
-        $('#new-task').val('');
+        if ($('#new-task').val() != '') {
+            $('#incomplete-tasks').append(newitem($('#new-task').val()));
+            $('#new-task').val('');
+        }
     });
 });
 
