@@ -2,7 +2,7 @@
   "name": "Freetab",
   "short_name": "Freetab",
   "description": "Freetab for displaying simple new tab",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -25,7 +25,7 @@
   "background" : {
     "scripts" : ["asset/js/background.js","asset/js/main.js","asset/js/jquery-3.2.1.min.js","asset/js/reallySimpleWeather.js"]
   },
-  "permissions":["tabs", "http://*/*", "https://maps.googleapis.com/*", "contextMenus", "geolocation","activeTab"],
+  "permissions":["tabs", "http://*/*", "https://maps.googleapis.com/*", "contextMenus", "geolocation","activeTab", "https://newsapi.org/*"],
   "offline_enabled": true
 
 }
