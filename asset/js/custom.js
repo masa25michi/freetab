@@ -32,7 +32,8 @@ $(document).ready(function() {
     });
 
     $('body').on('change','#date-format-select',function (e) {
-        dateFormat = $(this).val();
+        dateFormat = parseInt($(this).val());
+        console.log(dateFormat);
 
         localStorage.setItem('dateformat', JSON.stringify({ 'dateformat': dateFormat }));
     });
