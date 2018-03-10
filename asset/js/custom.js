@@ -2,6 +2,8 @@ var degree_default = localStorage.degree || '\u2103\u0020';
 var sPositions = localStorage.positions || "{}",
     positions = JSON.parse(sPositions);
 
+var dateFormat = 0; //0-> with second 1-> no second
+
 $(document).ready(function() {
 
     initialize();
@@ -27,6 +29,12 @@ $(document).ready(function() {
 
     $('body').on('change','#changecolor',function (e) {
         colortheme_event(e);
+    });
+
+    $('body').on('change','#date-format-select',function (e) {
+        dateFormat = $(this).val();
+
+        localStorage.setItem('dateformat', JSON.stringify({ 'dateformat': dateFormat }));
     });
 
 });
@@ -55,6 +63,7 @@ function initializeLocalStorage()
     var masatab_colortheme = localStorage.getItem('color_theme');
     var masatab_news = localStorage.getItem('show_news');
     var masatab_items = localStorage.getItem("todo_items");
+    var masatab_dateformat = localStorage.getItem("dateformat");
 
     if (masatab_weather != null) {
         var masatab_weather_arr = JSON.parse(masatab_weather);
@@ -143,6 +152,17 @@ function initializeLocalStorage()
             $('#incomplete-tasks').append('<li>'+tmp_arr[i]+'<buttton class="delete-item"><i class="far fa-minus-square fa-1x"></i></buttton></li>');
         }
     }
+
+    if (masatab_dateformat != null) {
+        var masatab_dateformat_arr = JSON.parse(masatab_dateformat);
+        dateformat_tmp = masatab_dateformat_arr['dateformat'];
+
+        dateFormat = dateformat_tmp;
+        $("#date-format-select option[value='"+dateFormat+"']").attr('selected', 'selected');
+
+    } else {
+        localStorage.setItem('dateformat', JSON.stringify({ 'dateformat': 0 }));
+    }
 }
 function initialize()
 {
@@ -199,7 +219,11 @@ function getTime(){
         second = "0"+second;
     }
 
-    var time = hour + ":" + minute + ":" + second;
+    var time = hour + ":" + minute;
+
+    if (dateFormat === 0) {
+        time += ":" + second;
+    }
 
     return time;
 }
