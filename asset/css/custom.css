@@ -14,11 +14,11 @@ body {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
-a:link {
+.btn:link {
     text-decoration: none;
     color: #f5eafa;
 }
-a:visited {
+.btn:visited {
     color: #f5eafa;
 }
 
@@ -34,7 +34,7 @@ video {
 }
 
 h1 {
-    font-size:650%;
+    font-size:700%;
 }
 
 .weather-box {
@@ -315,4 +315,36 @@ button:hover {
 #error-msg-item{
     font-size:60%;
     text-align: center;
+}
+
+.background-img > img
+{
+    width:100%;
+    height:100%;
+    position:fixed;
+    z-index:-1;
+    overflow:hidden;
+    top:0;
+    left:0;
+}
+
+.tablink {
+    /*background-color: #2a2a09;*/
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 10px;
+    width: 25%;
+    border-radius: 0px;
+}
+.active {
+    /*text-decoration: underline;*/
+    /*text-decoration-color: cornflowerblue;*/
+    border-bottom: 1px solid cornflowerblue;
+    color:white;
+    font-weight: bold;
+    font-size:100%;
 }

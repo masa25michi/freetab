@@ -24,6 +24,10 @@ $(document).ready(function() {
             settingGeneral('.search','show_search', {'display':'block'},{'display':'none'});
         } else if(id === 'news_button' ) {
             settingGeneral('.news-box','show_news', {'display':'block'},{'display':'none'});
+        } else if(id === 'todo_button' ) {
+            settingGeneral('.todo-box','show_todo', {'display':'block'},{'display':'none'});
+        } else if(id === 'quote_button' ) {
+            settingGeneral('.quote-box','show_quote', {'display':'block'},{'display':'none'});
         }
     });
 
@@ -63,6 +67,8 @@ function initializeLocalStorage()
     var masatab_search = localStorage.getItem('show_search');
     var masatab_colortheme = localStorage.getItem('color_theme');
     var masatab_news = localStorage.getItem('show_news');
+    var masatab_todo = localStorage.getItem('show_todo');
+    var masatab_quote = localStorage.getItem('show_quote');
     var masatab_items = localStorage.getItem("todo_items");
     var masatab_dateformat = localStorage.getItem("dateformat");
 
@@ -134,7 +140,38 @@ function initializeLocalStorage()
         }
     }else{
         $('#news_button').attr('checked', true);
-        settingGeneral(".search", "show_news", {'display':'block'}, {});
+        settingGeneral(".news-box", "show_news", {'display':'block'}, {});
+    }
+
+    if(masatab_todo !=null){
+        var masatab_todo_arr = JSON.parse(masatab_todo);
+        if(masatab_todo_arr['set']==true){
+            $(".todo-box").css("display", "block");
+            $('#todo_button').attr('checked', true);
+
+        }else{
+            $(".todo-box").css("display", "none");
+            $('#todo_button').attr('checked', false);
+        }
+    }else{
+        $('#todo_button').attr('checked', true);
+        settingGeneral(".todo-box", "show_todo", {'display':'block'}, {});
+    }
+
+    if(masatab_quote !=null){
+        var masatab_quote_arr = JSON.parse(masatab_quote);
+        if(masatab_quote_arr['set']==true){
+            $(".quote-box").css("display", "block");
+            $('#quote_button').attr('checked', true);
+
+        }else{
+            console.log('okok');
+            $(".quote-box").css("display", "none");
+            $('#quote_button').attr('checked', false);
+        }
+    }else{
+        $('#quote_button').attr('checked', true);
+        settingGeneral(".quote-box", "show_quote", {'display':'block'}, {});
     }
 
     if(masatab_colortheme !=null){

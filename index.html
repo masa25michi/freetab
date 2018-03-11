@@ -15,18 +15,25 @@
     <link href="asset/font/weather-icons/css/weather-icons.min.css" rel="stylesheet">
     <link href="/asset/css/custom.css" rel="stylesheet">
 
+    <style>
+
+    </style>
 </head>
 
 <body class="text-center">
-        <video autoplay="autoplay" loop>
-            <source src='/asset/background-video.mp4' type='video/mp4' />
-        </video>
+        <!--<video autoplay="autoplay" loop>-->
+            <!--<source src='/asset/background-video.mp4' type='video/mp4' />-->
+        <!--</video>-->
+    <div class="background-img">
+        <img src="/asset/img/background1.jpeg">
+    </div>
 
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto" style="max-width:100%;overflow-wrap: break-word; font-size: 80%;">
-
-            <label id='quote-text' class="text-align-top text-align-center" style="max-width:550px; overflow-wrap: break-word;">
-            </label>
+            <div class="quote-box">
+                <label id='quote-text' class="text-align-top text-align-center" style="max-width:550px; overflow-wrap: break-word;">
+                </label>
+            </div>
 
         </header>
 
@@ -80,7 +87,14 @@
         </footer>
     </div>
 
-    <div id="popover-setting-content" style="display: none; color:white;">
+    <div id="popover-setting-content" style="display: none;">
+        <button class="tablink active" >General</button>
+        <!--<button class="tablink" style="">Help</button>-->
+        <!--<button class="tablink" style="">About</button>-->
+        <!--<button class="tablink" style="">Version</button>-->
+        <br><br>
+        <!--<hr style="background-color:dimgrey;">-->
+        <br>
         <table class="setting-table">
             <caption>setting</caption>
             <tr>
@@ -121,6 +135,24 @@
                 <td>
                     <label class="switch">
                         <input class = 'setting-check' id = 'news_button' type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>ToDo</td>
+                <td>
+                    <label class="switch">
+                        <input class = 'setting-check' id = 'todo_button' type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Quote</td>
+                <td>
+                    <label class="switch">
+                        <input class = 'setting-check' id = 'quote_button' type="checkbox" checked>
                         <span class="slider round"></span>
                     </label>
                 </td>
