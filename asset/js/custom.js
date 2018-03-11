@@ -29,6 +29,12 @@ $(document).ready(function() {
         } else if(id === 'quote_button' ) {
             settingGeneral('.quote-box','show_quote', {'display':'block'},{'display':'none'});
         }
+        if(this.checked ) {
+            $('#'+id).attr('checked', true);
+        } else {
+            $('#'+id).attr('checked', false);
+        }
+
     });
 
     $('body').on('change','#changecolor',function (e) {
@@ -354,18 +360,17 @@ function loadWeather(location, woeid) {
 }
 
 function settingGeneral(display_element, localstorage_element, css_active, css_disactive){
-    var localStorage_temp = localStorage.getItem(localstorage_element)
+    var localStorage_temp = localStorage.getItem(localstorage_element);
     if ( localStorage_temp === null) {
-        localStorage.setItem(localstorage_element, JSON.stringify({ 'set': true }));
         $(display_element).css(css_active);
+        localStorage.setItem(localstorage_element, JSON.stringify({ 'set': true }));
     }else{
-        // var localStorage_temp_arr = ;
         if(JSON.parse(localStorage_temp)['set']==true){
-            localStorage.setItem(localstorage_element, JSON.stringify({ 'set': false }));
             $(display_element).css(css_disactive);
+            localStorage.setItem(localstorage_element, JSON.stringify({ 'set': false }));
         }else{
-            localStorage.setItem(localstorage_element, JSON.stringify({ 'set': true }));
             $(display_element).css(css_active);
+            localStorage.setItem(localstorage_element, JSON.stringify({ 'set': true }));
         }
     }
 }
