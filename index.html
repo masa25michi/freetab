@@ -25,7 +25,7 @@
             <!--<source src='/asset/background-video.mp4' type='video/mp4' />-->
         <!--</video>-->
     <div class="background-img">
-        <img src="/asset/img/background1.jpeg">
+        <img src="/asset/img/background2.jpeg">
     </div>
 
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
@@ -60,10 +60,14 @@
             <div  class="todo-box-under">
                 <table class="">
                     <tr>
-                        <td style="width:90%;"><input id="new-task" type="text" placeholder="Add Item" class="form-control todo" ></td>
-                        <td>
-                            <button id="todo-add" class="btn-2">+</button>
+                        <td style="width:10%;">
+                            <form id="new-task-input-form">
+                                <input id="new-task" type="text" placeholder="Add Item" class="form-control todo" >
+                            </form>
                         </td>
+                        <!--<td>-->
+                            <!--<button id="todo-add" class="btn-2">+</button>-->
+                        <!--</td>-->
                     </tr>
                     <tr>
                         <td id="error-msg-item"></td>
@@ -82,7 +86,8 @@
                 <input name = "q" value = "" type="text" class="form-control search" placeholder="Google Search">
             </form>
 
-            <div class="inner">
+            <div class="photo_taken_by">
+                <p><a href="https://www.pexels.com/u/apasaric/"><i class="far fa-heart" style="color:mediumvioletred;"></i>Aleksandar Pasaric</a></p>
             </div>
         </footer>
     </div>
@@ -184,7 +189,7 @@
             </tr>
         </table>
         <div class="user-profile">
-            <p>Hello, <span class="user_name"></span></p>
+            <p><span class="greeting_in_user_profile"></span>, <span class="user_name"></span></p>
         </div>
         <div class="new-user-register">
             <p>Hi! What can I call you?</p>
@@ -198,7 +203,6 @@
         <div class="about_info">
             <p>Freetab (Free Style Tab) 0.2.*</p>
             <p>Thank you for using this chrome extension!</p>
-
         </div>
     </div>
 

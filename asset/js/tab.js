@@ -22,6 +22,19 @@ $(function(){
                 var masatab_user_name_arr = JSON.parse(masatab_user_name);
                 console.log(masatab_user_name_arr['user_name']);
 
+                var today = new Date();
+                var curHr = today.getHours();
+                var greeting_words = '';
+
+                if (curHr < 12) {
+                    greeting_words = 'Good Morning';
+                } else if (curHr < 18) {
+                    greeting_words = 'Good Afternoon';
+                } else {
+                    greeting_words = 'Good Evening'
+                }
+
+                $('.greeting_in_user_profile').text(greeting_words);
                 $('.user_name').text(masatab_user_name_arr['user_name']);
                 $('.user-profile').show('slow');
             }
@@ -44,6 +57,6 @@ function hidealltab()
     $('.new-user-register').hide();
     $('.user-profile').hide();
     $('.contact_info').hide();
-        $('.about_info').hide();
+    $('.about_info').hide();
 }
 

@@ -30,6 +30,22 @@ $(function(){
 
         $(this).parent().remove();
     });
+
+    $('#new-task-input-form').submit(function(e){
+        if ($('#new-task').val() !== '') {
+            str = newitem($('#new-task').val());
+
+            if (str === -1 ) {
+                $('#error-msg-item').text('Found Duplicated Text.');
+                setTimeout(function(){ $('#error-msg-item').text(''); }, 3000);
+
+            } else {
+                $('#incomplete-tasks').append(str);
+                $('#new-task').val('');
+            }
+        }
+        e.preventDefault();
+    });
 });
 
 function newitem(str)

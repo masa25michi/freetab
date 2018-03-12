@@ -182,11 +182,11 @@ input:checked + .slider:before {
     box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
     background: transparent;
     border-radius: 20px;
-    margin-bottom:10%;
+    margin-bottom:5%;
     color:white;
     width:45%;
     text-align: center;
-    margin-left:25%;
+    margin-left:27%;
 }
 
 .search:focus {
@@ -208,7 +208,7 @@ input:checked + .slider:before {
 .todo:focus {
     background: transparent;
     border-radius: 10px;
-    /*box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);*/
+    box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
     color:white;
 }
 
@@ -229,7 +229,14 @@ input:checked + .slider:before {
     /*box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);*/
     color:white;
     border:none;
+    outline:none !important;
     border-bottom:1px solid grey;
+    box-shadow: none;
+}
+
+*:focus {
+    outline: none !important;
+    box-shadow: none;
 }
 
 #time {
@@ -252,6 +259,10 @@ button::after {
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+}
+
+input:focus {
+    outline:none;
 }
 
 button {
@@ -380,4 +391,12 @@ button:hover {
     color:white;
     font-weight: bold;
     font-size: 14px;
+}
+
+.photo_taken_by
+{
+    text-align: center;
+    font-size:11px;
+    margin-left: -5px;
+    font-style: italic;
 }
