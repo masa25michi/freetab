@@ -43,9 +43,22 @@ $(document).ready(function() {
 
     $('body').on('change','#date-format-select',function (e) {
         dateFormat = parseInt($(this).val());
-        console.log(dateFormat);
+        // $('.date-format-select-class').val(dateFormat);
+        // $(".date-format-select-class option[value='"+dateFormat+"']").attr('selected', 'selected');
+        $(".date-format-select-class option[value="+$(this).val()+"]").attr('selected', 'selected');
 
         localStorage.setItem('dateformat', JSON.stringify({ 'dateformat': dateFormat }));
+    });
+
+    $('body').on('submit','#form-register-input',function (e) {
+
+        var values = $( this ).serializeArray();
+        user_name = values[0]['value'];
+        localStorage.setItem('user_name', JSON.stringify({ 'user_name': user_name }));
+        $('.new-user-register').hide();
+        $('.user_name').text(user_name);
+        $('.user-profile').show('slow');
+        e.preventDefault();
     });
 
 });
@@ -171,7 +184,6 @@ function initializeLocalStorage()
             $('#quote_button').attr('checked', true);
 
         }else{
-            console.log('okok');
             $(".quote-box").css("display", "none");
             $('#quote_button').attr('checked', false);
         }

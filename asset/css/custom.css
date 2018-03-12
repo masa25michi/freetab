@@ -212,10 +212,37 @@ input:checked + .slider:before {
     color:white;
 }
 
+.register-input {
+    /*box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);*/
+    background: transparent;
+    border-radius: 10px;
+    color:white;
+    width:100%;
+    border:none;
+    border-bottom:1px solid grey;
+    /*text-align: center;*/
+}
+
+.register-input:focus {
+    background: transparent;
+    border-radius: 10px;
+    /*box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);*/
+    color:white;
+    border:none;
+    border-bottom:1px solid grey;
+}
+
 #time {
     min-width:380px;
 }
 
+.user-profile, .new-user-register, .contact_info, .about_info {
+    color:white;display: none;
+}
+
+.user-profile, .new-user-register, .contact_info, .about_info > p{
+    margin-left:2%;
+}
 
 
 /* GENERAL BUTTON STYLING */
@@ -336,15 +363,21 @@ button:hover {
     outline: none;
     cursor: pointer;
     padding: 5px;
-    font-size: 10px;
+    font-size: 13px;
     width: 25%;
     border-radius: 0px;
+    /*margin-left:1%;*/
+}
+
+.tablink:focus {
+    outline:none ;
 }
 .active {
     /*text-decoration: underline;*/
     /*text-decoration-color: cornflowerblue;*/
+    box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
     border-bottom: 1px solid cornflowerblue;
     color:white;
     font-weight: bold;
-    font-size:100%;
+    font-size: 14px;
 }

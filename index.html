@@ -88,15 +88,15 @@
     </div>
 
     <div id="popover-setting-content" style="display: none;">
-        <button class="tablink active" >General</button>
-        <!--<button class="tablink" style="">Help</button>-->
-        <!--<button class="tablink" style="">About</button>-->
-        <!--<button class="tablink" style="">Version</button>-->
+        <button class="tablink active" id="general_tab">General</button>
+        <button class="tablink" style="" id="user_tab">User</button>
+        <button class="tablink" style="" id="contact_tab">Contact</button>
+        <button class="tablink" style="" id="about_tab">About</button>
         <br><br>
         <!--<hr style="background-color:dimgrey;">-->
         <br>
         <table class="setting-table">
-            <caption>setting</caption>
+            <!--<caption>setting</caption>-->
             <tr>
                 <td><hr style='opacity:0;'></td>
             </tr>
@@ -175,7 +175,7 @@
                 <td>Date Format</td>
                 <td>
                     <label class="switch">
-                        <select id="date-format-select">
+                        <select id="date-format-select" class="date-format-select-class">
                             <option value="0">HH:MM:SS</option>
                             <option value="1">HH:MM</option>
                         </select>
@@ -183,6 +183,23 @@
                 </td>
             </tr>
         </table>
+        <div class="user-profile">
+            <p>Hello, <span class="user_name"></span></p>
+        </div>
+        <div class="new-user-register">
+            <p>Hi! What can I call you?</p>
+            <form id="form-register-input">
+                <input id="register_name" type="text" placeholder="Name" name='register_name' class="form-control register-input" >
+            </form>
+        </div>
+        <div class="contact_info">
+            <p>Masa: masa25michi@hotmail.com</p>
+        </div>
+        <div class="about_info">
+            <p>Freetab (Free Style Tab) 0.2.*</p>
+            <p>Thank you for using this chrome extension!</p>
+
+        </div>
     </div>
 
 
@@ -194,5 +211,6 @@
     <script src="/asset/js/todo.js"></script>
     <script src="/asset/js/news.js"></script>
     <script src="/asset/js/quote.js"></script>
+    <script src="/asset/js/tab.js"></script>
 </body>
 </html>
