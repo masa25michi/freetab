@@ -291,7 +291,7 @@ function initialize()
         localStorage.setItem('is_firsttime', JSON.stringify({ 'is_firsttime': false }));
     }
 
-    $('.background-img').hide();
+    // $('.background-img').hide();
     $('[data-toggle="popover"]').popover(
         {
             html: true,
@@ -308,9 +308,9 @@ function initialize()
     if(parseInt(hour)>=6 && parseInt(hour)<=11){
         $('.background-img').html('<img src="/asset/img/background-morning.jpeg">');
     } else if (parseInt(hour)>=12 && parseInt(hour)<=17){
-        $('.background-img').html('<img src="/asset/img/background-noon.jpeg">');
+        $('.background-img').html('<img src="/asset/img/background-noon.jpg">');
     } else {
-        $('.background-img').html('<img src="/asset/img/background-evening.jpeg">');
+        $('.background-img').html('<img src="/asset/img/background-evening.jpg">');
     }
 
     initializeLocalStorage();
@@ -334,7 +334,7 @@ function initialize()
 
         loadWeather(lat+','+long); //load weather using your lat/lng coordinates
     });
-    $('.background-img').show();
+    $('.background-img').show('1500');
 }
 
 function getTime(){

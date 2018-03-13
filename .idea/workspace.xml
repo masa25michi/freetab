@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db3115a3-d0f0-4108-afbf-2fcf918292d0" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/img/background-evening.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/img/background-noon.jpg" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/asset/css/custom.css" afterPath="$PROJECT_DIR$/asset/css/custom.css" />
-      <change beforePath="$PROJECT_DIR$/asset/img/background1.jpeg" afterPath="$PROJECT_DIR$/asset/img/background-noon.jpeg" />
-      <change beforePath="$PROJECT_DIR$/asset/img/background2.jpeg" afterPath="$PROJECT_DIR$/asset/img/background-evening.jpeg" />
-      <change beforePath="$PROJECT_DIR$/asset/img/background3.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/asset/img/background-evening.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/asset/img/background-noon.jpeg" afterPath="" />
       <change beforePath="$PROJECT_DIR$/asset/js/custom.js" afterPath="$PROJECT_DIR$/asset/js/custom.js" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,24 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="307" column="48" lean-forward="true" selection-start-line="307" selection-start-column="48" selection-end-line="307" selection-end-column="48" />
-              <folding>
-                <element signature="n#!!block;n#initializeLocalStorage#0" expanded="false" />
-                <element signature="n#!!block;n#loadWeather#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="68" column="43" lean-forward="true" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="51" />
+            <state relative-caret-position="390">
+              <caret line="26" column="53" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="53" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -51,6 +37,21 @@
                 <element signature="n#style#0;n#i#0;n#a#0;n#p#0;n#div#0;n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#table#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="310" column="75" lean-forward="false" selection-start-line="310" selection-start-column="75" selection-end-line="310" selection-end-column="75" />
+              <folding>
+                <element signature="n#!!block;n#initializeLocalStorage#0" expanded="false" />
+                <element signature="n#!!block;n#loadWeather#0" expanded="false" />
+                <marker date="1520936242173" expanded="true" signature="13047:13053" ph=" " />
+                <marker date="1520936242173" expanded="true" signature="13053:13059" ph=" " />
               </folding>
             </state>
           </provider>
@@ -67,7 +68,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>todo_button</find>
       <find>popo</find>
       <find>okok</find>
       <find>css</find>
@@ -97,6 +97,7 @@
       <find>name</find>
       <find>&amp;</find>
       <find>new-task</find>
+      <find>background-img</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -119,9 +120,9 @@
         <option value="$PROJECT_DIR$/asset/js/news.js" />
         <option value="$PROJECT_DIR$/asset/js/todo.js" />
         <option value="$PROJECT_DIR$/asset/js/stopwatch.js" />
+        <option value="$PROJECT_DIR$/asset/css/custom.css" />
         <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/asset/css/custom.css" />
         <option value="$PROJECT_DIR$/asset/js/custom.js" />
       </list>
     </option>
@@ -131,6 +132,11 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
@@ -201,13 +207,13 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/asset/img" />
+      <recent name="$PROJECT_DIR$/asset/js" />
+      <recent name="$PROJECT_DIR$/asset/css" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/asset" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/asset/js" />
-      <recent name="$PROJECT_DIR$/asset/img" />
-      <recent name="$PROJECT_DIR$/asset/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -260,12 +266,12 @@
       <workItem from="1520837503070" duration="7525000" />
       <workItem from="1520870913050" duration="1474000" />
       <workItem from="1520904443023" duration="2758000" />
-      <workItem from="1520930964336" duration="1634000" />
+      <workItem from="1520930964336" duration="2553000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59284000" />
+    <option name="totallyTimeSpent" value="60203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -322,21 +328,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/asset/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4740">
-          <caret line="316" column="22" lean-forward="false" selection-start-line="316" selection-start-column="22" selection-end-line="316" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="37" lean-forward="true" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2130">
@@ -344,6 +335,8 @@
           <folding>
             <element signature="n#!!block;n#initializeLocalStorage#0" expanded="false" />
             <element signature="n#!!block;n#loadWeather#0" expanded="false" />
+            <marker date="1520936242173" expanded="true" signature="13047:13053" ph=" " />
+            <marker date="1520936242173" expanded="true" signature="13053:13059" ph=" " />
           </folding>
         </state>
       </provider>
@@ -651,13 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/tab.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -665,22 +651,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/img/background-evening.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/img/background3.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/img/background-noon.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/img/background-morning.jpeg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -693,10 +664,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/eclipse.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/font/HELP-US-OUT.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/background-evening.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/background-morning.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/background-noon.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="68" column="43" lean-forward="true" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="51" />
+        <state relative-caret-position="390">
+          <caret line="26" column="53" lean-forward="false" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="53" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -713,11 +720,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="307" column="48" lean-forward="true" selection-start-line="307" selection-start-column="48" selection-end-line="307" selection-end-column="48" />
+        <state relative-caret-position="197">
+          <caret line="310" column="75" lean-forward="false" selection-start-line="310" selection-start-column="75" selection-end-line="310" selection-end-column="75" />
           <folding>
             <element signature="n#!!block;n#initializeLocalStorage#0" expanded="false" />
             <element signature="n#!!block;n#loadWeather#0" expanded="false" />
+            <marker date="1520936242173" expanded="true" signature="13047:13053" ph=" " />
+            <marker date="1520936242173" expanded="true" signature="13053:13059" ph=" " />
           </folding>
         </state>
       </provider>
