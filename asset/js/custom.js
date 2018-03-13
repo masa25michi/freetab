@@ -70,6 +70,19 @@ $(document).ready(function() {
         user_name = values[0]['value'];
         localStorage.setItem('user_name', JSON.stringify({ 'user_name': user_name }));
         $('.new-user-register').hide();
+        var today = new Date();
+        var curHr = today.getHours();
+        var greeting_words = '';
+
+        if (curHr < 12) {
+            greeting_words = 'Good Morning';
+        } else if (curHr < 18) {
+            greeting_words = 'Good Afternoon';
+        } else {
+            greeting_words = 'Good Evening'
+        }
+
+        $('.greeting_in_user_profile').text(greeting_words);
         $('.user_name').text(user_name);
         $('.user-profile').show('slow');
         e.preventDefault();
@@ -90,6 +103,18 @@ function changecolortheme(color){
     $('a:link').css('color',color);
     $('a:visited').css('color',color);
 
+}
+
+function hideAllElements()
+{
+    $('.weather-box').hide();
+    // $('.setting-box').hide();
+    $('.news-box').hide();
+    $('.todo-box').hide();
+    // $('#time').hide();
+    $('#displaydate').hide();
+    $('.search').hide();
+    $('.photo_taken_by').hide();
 }
 
 function initializeLocalStorage()
@@ -254,10 +279,19 @@ function initializeLocalStorage()
         var time = getTime();
         $("#time").html(time);
     }
+
 }
 function initialize()
 {
+    var masatab_is_firsttime = localStorage.getItem("is_firsttime");
 
+    if (masatab_is_firsttime != null) {
+        // hideAllElements();
+    } else {
+        localStorage.setItem('is_firsttime', JSON.stringify({ 'is_firsttime': false }));
+    }
+
+    $('.background-img').hide();
     $('[data-toggle="popover"]').popover(
         {
             html: true,
@@ -267,11 +301,19 @@ function initialize()
         }
     );
 
-    initializeLocalStorage();
+    //set background
+    var dt = new Date();
+    var hour = dt.getHours();
 
-    //time
-    // var time = getTime();
-    // $("#time").html(time);
+    if(parseInt(hour)>=6 && parseInt(hour)<=11){
+        $('.background-img').html('<img src="/asset/img/background-morning.jpeg">');
+    } else if (parseInt(hour)>=12 && parseInt(hour)<=17){
+        $('.background-img').html('<img src="/asset/img/background-noon.jpeg">');
+    } else {
+        $('.background-img').html('<img src="/asset/img/background-evening.jpeg">');
+    }
+
+    initializeLocalStorage();
 
     //date
     var d = new Date();
@@ -292,6 +334,7 @@ function initialize()
 
         loadWeather(lat+','+long); //load weather using your lat/lng coordinates
     });
+    $('.background-img').show();
 }
 
 function getTime(){
@@ -331,7 +374,7 @@ function get12Time() {
     if(parseInt(second)<10){
         second = "0"+second;
     }
-    var strTime ='&nbsp;&nbsp;&nbsp;'+ hours + ':' + minutes;
+    var strTime ='&nbsp;&nbsp;'+ hours + ':' + minutes;
     if (dateFormat === 0) {
         strTime += ":" + second;
     }

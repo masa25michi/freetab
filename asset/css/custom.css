@@ -311,7 +311,8 @@ button:hover {
 
 #new-task {
     border:none;
-    border-bottom:1px solid grey;
+    border-bottom:2px solid dimgrey;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5), 10px 20px 20px 10px rgba(0, 0, 0, 0.19);
 }
 
 
