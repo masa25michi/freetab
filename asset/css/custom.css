@@ -60,6 +60,10 @@ h1 {
     max-height:47%;
     overflow: auto;
 }
+.quote-box
+{
+    min-height:90px;
+}
 
 .todo-box {
     position:fixed;
