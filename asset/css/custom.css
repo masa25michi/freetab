@@ -34,7 +34,7 @@ video {
 }
 
 h1 {
-    font-size:700%;
+    font-size:670%;
 }
 
 .weather-box {
@@ -241,6 +241,10 @@ input:checked + .slider:before {
 
 #time {
     min-width:380px;
+}
+
+#time > small{
+    font-size:65%;
 }
 
 .user-profile, .new-user-register, .contact_info, .about_info {

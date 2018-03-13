@@ -3,13 +3,20 @@ var sPositions = localStorage.positions || "{}",
     positions = JSON.parse(sPositions);
 
 var dateFormat = 0; //0-> with second 1-> no second
+var hourFormat = 0; //0-> 24-hour 1-> 12-hour
 
 $(document).ready(function() {
 
     initialize();
 
+    // $('#time').hide().fadeIn(2000);
+
     window.setInterval(function(){
-        var time = getTime();
+        if (hourFormat === 0) {
+            var time = getTime();
+        } else {
+            var time = get12Time();
+        }
         $("#time").html(time);
     }, 1000);
 
@@ -48,6 +55,13 @@ $(document).ready(function() {
         $(".date-format-select-class option[value="+$(this).val()+"]").attr('selected', 'selected');
 
         localStorage.setItem('dateformat', JSON.stringify({ 'dateformat': dateFormat }));
+    });
+
+    $('body').on('change','#hour-format-select',function (e) {
+        hourFormat = parseInt($(this).val());
+        $(".hour-format-select-class option[value="+$(this).val()+"]").attr('selected', 'selected');
+
+        localStorage.setItem('hourformat', JSON.stringify({ 'hourformat': hourFormat }));
     });
 
     $('body').on('submit','#form-register-input',function (e) {
@@ -90,6 +104,7 @@ function initializeLocalStorage()
     var masatab_quote = localStorage.getItem('show_quote');
     var masatab_items = localStorage.getItem("todo_items");
     var masatab_dateformat = localStorage.getItem("dateformat");
+    var masatab_hourFormat = localStorage.getItem("hourformat");
 
     if (masatab_weather != null) {
         var masatab_weather_arr = JSON.parse(masatab_weather);
@@ -219,6 +234,26 @@ function initializeLocalStorage()
     } else {
         localStorage.setItem('dateformat', JSON.stringify({ 'dateformat': 0 }));
     }
+
+    if (masatab_hourFormat != null) {
+        var masatab_hourformat_arr = JSON.parse(masatab_hourFormat);
+        hourformat_tmp = masatab_hourformat_arr['hourformat'];
+
+        hourFormat = hourformat_tmp;
+        $("#hour-format-select option[value='"+hourFormat+"']").attr('selected', 'selected');
+
+        if (hourFormat === 0) {
+            var time = getTime();
+        } else {
+            var time = get12Time();
+        }
+        $("#time").html(time);
+
+    } else {
+        localStorage.setItem('hourformat', JSON.stringify({ 'hourformat': 0 }));
+        var time = getTime();
+        $("#time").html(time);
+    }
 }
 function initialize()
 {
@@ -235,8 +270,8 @@ function initialize()
     initializeLocalStorage();
 
     //time
-    var time = getTime();
-    $("#time").html(time);
+    // var time = getTime();
+    // $("#time").html(time);
 
     //date
     var d = new Date();
@@ -282,6 +317,27 @@ function getTime(){
     }
 
     return time;
+}
+
+function get12Time() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var second = date.getSeconds();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    if(parseInt(second)<10){
+        second = "0"+second;
+    }
+    var strTime ='&nbsp;&nbsp;&nbsp;'+ hours + ':' + minutes;
+    if (dateFormat === 0) {
+        strTime += ":" + second;
+    }
+
+    strTime += ' <small>' + ampm +'</small>';
+    return strTime;
 }
 
 function loadWeather(location, woeid) {

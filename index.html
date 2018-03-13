@@ -45,6 +45,10 @@
             <a tabindex="0" class="btn " data-container="body" data-toggle="popover" data-placement="bottom" >
                 <i class="fas fa-wrench" style="color:darkgrey"></i>
             </a>
+
+            <!--<a tabindex="0" class="btn " >-->
+                <!--<i class="fas fa-stopwatch" style="color:darkgrey"></i>-->
+            <!--</a>-->
         </div>
         <div class="news-box">
             <ul class="news-list">
@@ -77,7 +81,7 @@
         </div>
 
         <main role="main" class="inner cover" style="min-width:550px;">
-            <h1 id="time"></h1>
+            <h1 id="time" ></h1>
             <h3 id = 'displaydate'></h3>
         </main>
 
@@ -106,7 +110,7 @@
                 <td><hr style='opacity:0;'></td>
             </tr>
             <tr>
-                <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Show Options</td>
+                <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Display Options</td>
             </tr>
             <tr>
                 <td>Date</td>
@@ -174,15 +178,26 @@
                 <td><hr style='opacity:0;'></td>
             </tr>
             <tr>
-                <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Display Options</td>
+                <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Format Options</td>
             </tr>
             <tr>
-                <td>Date Format</td>
+                <td>Time Format</td>
                 <td>
                     <label class="switch">
                         <select id="date-format-select" class="date-format-select-class">
                             <option value="0">HH:MM:SS</option>
                             <option value="1">HH:MM</option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Hour Format</td>
+                <td>
+                    <label class="switch">
+                        <select id="hour-format-select" class="hour-format-select-class">
+                            <option value="0">24-hour</option>
+                            <option value="1">12-hour</option>
                         </select>
                     </label>
                 </td>
