@@ -20,53 +20,10 @@ $(document).ready(function() {
         $("#time").html(time);
     }, 1000);
 
-    $('#stopwatch_icon').click(function(){
-        $('#time_content').hide();
-        $('#timer_div').fadeIn('2000');
-    });
 
-    $('#timer_start_button').click(function(){
-        $('#timer_start_button').hide();
-        $('#timer_back_button').hide();
-        $('#timer_remove_button').fadeIn('2000');
-        $('#timer_pause_button').fadeIn('2000');
-        $('#timer_content').timer();
-    });
-
-    $('#timer_resume_button').click(function(){
-        $('#timer_content').timer('resume');
-        $('#timer_start_button').hide();
-        $('#timer_resume_button').hide();
-        $('#timer_back_button').hide();
-        $('#timer_remove_button').fadeIn('2000');
-        $('#timer_pause_button').fadeIn('2000');
-        $('#timer_content').timer();
-    });
-
-    $('#timer_remove_button').click(function(){
-        $('#timer_content').timer('remove');
-        $('#timer_start_button').fadeIn('2000');
-        $('#timer_back_button').fadeIn('2000');
-        $('#timer_resume_button').hide();
-        $('#timer_remove_button').hide();
-        $('#timer_pause_button').hide();
-
-        $('#timer_content').text('0 sec');
-    });
-
-    $('#timer_pause_button').click(function(){
-        $('#timer_content').timer('pause');
-        $('#timer_resume_button').fadeIn('2000');
-        $('#timer_remove_button').fadeIn('2000');
-        $('#timer_back_button').fadeIn('2000');
-        $('#timer_pause_button').hide();
-    });
-
-    $('#timer_back_button').click(function(){
-        $('#timer_div').hide();
-        $('#time_content').fadeIn('2000');
-    });
-
+    window.setTimeout(function(){
+        $('#time_content_greeting').find('span').hide().fadeIn('8000');
+    },1500);
 
 
     $('body').on('click','.setting-check',function () {
@@ -360,17 +317,27 @@ function initialize()
     );
 
 
-
     //set background
     var dt = new Date();
     var hour = dt.getHours();
+    var masatab_user_name = localStorage.getItem("user_name");
+    var tmp_greeting_words ='';
+
+    if (masatab_user_name != null)
+    {
+        var masatab_user_name_arr = JSON.parse(masatab_user_name);
+        tmp_greeting_words = ', '+masatab_user_name_arr['user_name'];
+    }
 
     if(parseInt(hour)>=6 && parseInt(hour)<=11){
         $('.background-img').html('<img src="/asset/img/background-morning.jpeg">');
+        $('#time_content_greeting').find('span').text('Good Morning'+tmp_greeting_words);
     } else if (parseInt(hour)>=12 && parseInt(hour)<=17){
         $('.background-img').html('<img src="/asset/img/background-noon.jpg">');
+        $('#time_content_greeting').find('span').text('Good Afternoon'+tmp_greeting_words);
     } else {
         $('.background-img').html('<img src="/asset/img/background-evening.jpg">');
+        $('#time_content_greeting').find('span').text('Good Evening'+tmp_greeting_words);
     }
 
     initializeLocalStorage();
@@ -434,7 +401,7 @@ function get12Time() {
     if(parseInt(second)<10){
         second = "0"+second;
     }
-    var strTime ='&nbsp;&nbsp;'+ hours + ':' + minutes;
+    var strTime ='&nbsp;'+ hours + ':' + minutes;
     if (dateFormat === 0) {
         strTime += ":" + second;
     }

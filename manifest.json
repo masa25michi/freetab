@@ -2,7 +2,7 @@
   "name": "Freetab",
   "short_name": "Freetab",
   "description": "Freetab for displaying simple new tab",
-  "version": "0.2.7.13",
+  "version": "0.2.7.14",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"

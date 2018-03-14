@@ -93,6 +93,10 @@ h1 {
     width:100%;
 }
 
+#time_content_greeting {
+    font-style: italic;
+    min-height: 30px;
+}
 
 ul {
     width:100%;

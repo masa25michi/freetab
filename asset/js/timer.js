@@ -7,6 +7,57 @@
         DAYINSECONDS: 86400
     };
 
+    $('#stopwatch_icon').click(function(){
+        $('#time_content').hide();
+        $('#timer_div').fadeIn('2000');
+    });
+
+    $('#timer_start_button').click(function(){
+        $('#timer_start_button').hide();
+        $('#timer_back_button').hide();
+        $('#timer_remove_button').fadeIn('2000');
+        $('#timer_pause_button').fadeIn('2000');
+        $('#timer_content').timer();
+    });
+
+    $('#timer_resume_button').click(function(){
+        $('#timer_content').timer('resume');
+        $('#timer_start_button').hide();
+        $('#timer_resume_button').hide();
+        $('#timer_back_button').hide();
+        $('#timer_remove_button').fadeIn('2000');
+        $('#timer_pause_button').fadeIn('2000');
+        $('#timer_content').timer();
+    });
+
+    $('#timer_remove_button').click(function(){
+        $('#timer_content').timer('remove');
+        $('#timer_start_button').fadeIn('2000');
+        $('#timer_back_button').fadeIn('2000');
+        $('#timer_resume_button').hide();
+        $('#timer_remove_button').hide();
+        $('#timer_pause_button').hide();
+
+        $('#timer_content').text('0 sec');
+    });
+
+    $('#timer_pause_button').click(function(){
+        $('#timer_content').timer('pause');
+        $('#timer_resume_button').fadeIn('2000');
+        $('#timer_remove_button').fadeIn('2000');
+        $('#timer_back_button').fadeIn('2000');
+        $('#timer_pause_button').hide();
+    });
+
+    $('#timer_back_button').click(function(){
+        $('#timer_div').hide();
+        $('#time_content').fadeIn('2000');
+    });
+
+    $('#time_date_icon').click(function(){
+
+    });
+
     /* global Constants:true */
     /**
      * Private
