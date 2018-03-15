@@ -1,31 +1,34 @@
 {
-  "name": "Freetab",
+  "name": "Free Style Tab",
   "short_name": "Freetab",
-  "description": "Freetab for displaying simple new tab",
-  "version": "0.2.7.14",
+  "description": "Freetab for displaying amazing new tab",
+  "version": "0.2.7.17",
+  "version_name": "New Freetab",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
-
   "manifest_version": 2,
   "icons": {
-    "16": "asset/img/icon.png",
-    "48": "asset/img/icon.png",
-    "128": "asset/img/icon.png"
+    "16": "asset/img/icon-16.png",
+    "48": "asset/img/icon-48.png",
+    "128": "asset/img/icon-128.png"
   },
+
+  "author" : "Masamichi Tanaka",
 
   "content_security_policy": "script-src 'self'; object-src 'self'",
 
-
   "browser_action": {
-    "default_icon": "asset/img/icon.png"
+    "default_icon": "asset/img/favicon.png",
+    "default_title": "Freetab"
   },
 
   "background" : {
     "scripts" : ["asset/js/background.js","asset/js/main.js","asset/js/jquery-3.2.1.min.js","asset/js/reallySimpleWeather.js"]
   },
-  "permissions":["tabs", "http://*/*", "https://maps.googleapis.com/*", "contextMenus", "geolocation","activeTab", "https://newsapi.org/*"],
+  "optional_permissions": [ "bookmarks", "topSites", "chrome://favicon/" ],
+  "permissions":[ "tabs", "http://*/*","http://quotesondesign.com/*","geolocation", "contextMenus", "unlimitedStorage", "*://*.yahooapis.com/*", "https://newsapi.org/*"],
   "offline_enabled": true
 
 }

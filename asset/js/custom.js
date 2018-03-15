@@ -352,15 +352,33 @@ function initialize()
     $('#displaydate').html(output);
 
     //weather
-    navigator.geolocation.getCurrentPosition(function(position) {
-        var lat = position.coords.latitude;
-        var long = position.coords.longitude;
+    getWeather();
+    if (navigator.geolocation) {
+        navigator.geolocation.watchPosition(function(position) {
+                console.log(position);
+                var lat = position.coords.latitude;
+                var long = position.coords.longitude;
 
-        var testObject = { 'lat': lat, 'long': long  };
-        localStorage.setItem('location', JSON.stringify(testObject));// Put the object into storage
+                var testObject = { 'lat': lat, 'long': long  };
+                localStorage.setItem('location', JSON.stringify(testObject));// Put the object into storage
+                getWeather();
+                //
+                // loadWeather(lat+','+long); //load weather using your lat/lng coordinates
+            },
+            function(error){
+                console.log(error.message);
+                // var retrievedObject = localStorage.getItem('location');
+                // var arr = JSON.parse(retrievedObject);
+                // loadWeather(arr['lat']+','+arr['long']);
+            }, {
+                enableHighAccuracy: true
+                ,timeout : 5000
+            }
+        );
+    }
 
-        loadWeather(lat+','+long); //load weather using your lat/lng coordinates
-    });
+
+
     $('.background-img').show('1500');
 }
 
@@ -411,12 +429,14 @@ function get12Time() {
 }
 
 function loadWeather(location, woeid) {
+    console.log(location);
     reallySimpleWeather.weather({
         wunderkey: '',
         location: location,
         woeid: woeid,
         unit: 'c',
         success: function(weather) {
+            console.log(weather);
             var temp = weather.temp;
             if(degree_default!='\u2103\u0020'){
                 temp = weather.alt.temp;

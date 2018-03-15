@@ -1,3 +1,4 @@
+var item_button_flag = false;
 $(function(){
     $('#todo-add').click(function(){
         if ($('#new-task').val() !== '') {
@@ -14,6 +15,18 @@ $(function(){
         }
     });
 
+    $('#add_item_button').hover(function(){
+        if(!item_button_flag) {
+            $('#new-task-input-form').fadeIn('2000');
+            item_button_flag = true;
+            $("#new-task").focus();
+        } else {
+            $('#new-task-input-form').fadeOut('2000');
+            item_button_flag = false;
+        }
+
+    });
+
     $('body').on('click','.delete-item',function (e) {
         var masatab_items = localStorage.getItem("todo_items");
         var masatab_items_arr = JSON.parse(masatab_items);
@@ -28,7 +41,12 @@ $(function(){
         }
         localStorage.setItem('todo_items', JSON.stringify({'items':new_arr}));
 
-        $(this).parent().remove();
+        window.setTimeout(function(){
+            $(this).parent().remove();
+        },3000);
+
+        $(this).parent().fadeOut('2000');
+
     });
 
     $('#new-task-input-form').submit(function(e){

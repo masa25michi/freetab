@@ -8,6 +8,7 @@
     <meta name="author" content="">
 
     <title>Freetab</title>
+    <link rel="shortcut icon" type="image/png" href="asset/img/icon-16.png"/>
 
     <!-- Bootstrap core CSS -->
     <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
@@ -65,18 +66,15 @@
                 <ul id="incomplete-tasks">
                 </ul>
             </div>
-
-            <div  class="todo-box-under" >
-                <table class="">
+            <div  class="todo-box-under" style="">
+                <a class="btn" id="add_item_button" style=""><i class="fas fa-list-ul"></i></a>
+                <table class="" style="min-height:60px;">
                     <tr>
                         <td style="width:10%;">
-                            <form id="new-task-input-form">
+                            <form id="new-task-input-form" style="display:none;">
                                 <input id="new-task" type="text" placeholder="Add Item" class="form-control todo" >
                             </form>
                         </td>
-                        <!--<td>-->
-                            <!--<button id="todo-add" class="btn-2">+</button>-->
-                        <!--</td>-->
                     </tr>
                     <tr>
                         <td id="error-msg-item"></td>
@@ -249,5 +247,6 @@
     <script src="/asset/js/news.js"></script>
     <script src="/asset/js/quote.js"></script>
     <script src="/asset/js/tab.js"></script>
+    <script src="/asset/js/weather.js"></script>
 </body>
 </html>

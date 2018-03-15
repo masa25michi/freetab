@@ -78,6 +78,15 @@ h1 {
     max-height:47%;
 }
 
+#add_item_button
+{
+    /*float:right; margin-bottom: 10px;margin-right: 2px;*/
+    position:fixed;
+    right:3%;
+    bottom:8.5%;
+    z-index: 2;
+}
+
 .todo-box-upper {
     max-height:300px;
     width:100%;
@@ -96,6 +105,10 @@ h1 {
 #time_content_greeting {
     font-style: italic;
     min-height: 30px;
+
+}
+#time_content_greeting > span {
+    font-size: 90%;
 }
 
 ul {
@@ -116,7 +129,7 @@ li {
 
 .popover {
     background-color: #09092a;
-    min-width:37%;
+    min-width:31%;
     border-width: 0px;
     box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
 }
