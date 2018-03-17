@@ -75,7 +75,7 @@ function changeWeatherUnit(unit) {
         }
 
         html = '<h3 id="weather_header">'+Math.round(temp)+' <span class="degree_default_text">'+unit+'</span></h3>';
-        html += '<p>'+'&nbsp;'+arr['name']+' , '+arr['country']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+arr['icon']+'.png" style="width:20%;height:20%;"> <br>';
+        html += '<p>'+arr['name']+' , '+arr['country']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+arr['icon']+'.png" style="width:20%;height:20%;"> <br>';
         html += 'Humidity: '+arr['humidity']+'%</p>';
 
         var tempobject = {

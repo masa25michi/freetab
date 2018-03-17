@@ -5,11 +5,9 @@ var sPositions = localStorage.positions || "{}",
 var dateFormat = 0; //0-> with second 1-> no second
 var hourFormat = 0; //0-> 24-hour 1-> 12-hour
 
-$(document).ready(function() {
+function start(){
 
     initialize();
-
-    // $('#time').hide().fadeIn(2000);
 
     window.setInterval(function(){
         if (hourFormat === 0) {
@@ -20,11 +18,9 @@ $(document).ready(function() {
         $("#time").html(time);
     }, 1000);
 
-
     window.setTimeout(function(){
         $('#time_content_greeting').find('span').hide().fadeIn('8000');
     },1500);
-
 
     $('body').on('click','.setting-check',function () {
         id = $(this).attr('id');
@@ -34,7 +30,7 @@ $(document).ready(function() {
         } else if(id === 'weather_button') {
             settingGeneral('.weather-box','show_weather', {'display':'block'},{'display':'none'});
         } else if(id === 'search_button' ) {
-            settingGeneral('.search','show_search', {'display':'block'},{'display':'none'});
+            settingGeneral('.search_form','show_search', {'display':'block'},{'display':'none'});
         } else if(id === 'news_button' ) {
             settingGeneral('.news-box','show_news', {'display':'block'},{'display':'none'});
         } else if(id === 'todo_button' ) {
@@ -94,7 +90,7 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-});
+}
 
 function colortheme_event(e){
     var color = e.currentTarget.value;
@@ -121,6 +117,7 @@ function hideAllElements()
     $('#displaydate').hide();
     $('.search').hide();
     $('.photo_taken_by').hide();
+    // $('form').hide();
 }
 
 function initializeLocalStorage()
@@ -182,16 +179,16 @@ function initializeLocalStorage()
     if(masatab_search !=null){
         var masatab_search_arr = JSON.parse(masatab_search);
         if(masatab_search_arr['set']==true){
-            $(".search").css("display", "block");
+            $(".search_form").css("display", "block");
             $('#search_button').attr('checked', true);
 
         }else{
-            $(".search").css("display", "none");
+            $(".search_form").css("display", "none");
             $('#search_button').attr('checked', false);
         }
     }else{
         $('#search_button').attr('checked', true);
-        settingGeneral(".search", "show_search", {'display':'block'}, {});
+        settingGeneral(".search_form", "show_search", {'display':'block'}, {});
     }
 
     if(masatab_news !=null){
@@ -331,30 +328,6 @@ function initialize()
         }
     );
 
-
-    //set background
-    var dt = new Date();
-    var hour = dt.getHours();
-    var masatab_user_name = localStorage.getItem("user_name");
-    var tmp_greeting_words ='';
-
-    if (masatab_user_name != null)
-    {
-        var masatab_user_name_arr = JSON.parse(masatab_user_name);
-        tmp_greeting_words = ', '+masatab_user_name_arr['user_name'];
-    }
-
-    if(parseInt(hour)>=6 && parseInt(hour)<=11){
-        $('.background-img').html('<img src="/asset/img/background-morning.jpeg">');
-        $('#time_content_greeting').find('span').text('Good Morning'+tmp_greeting_words);
-    } else if (parseInt(hour)>=12 && parseInt(hour)<=17){
-        $('.background-img').html('<img src="/asset/img/background-noon.jpg">');
-        $('#time_content_greeting').find('span').text('Good Afternoon'+tmp_greeting_words);
-    } else {
-        $('.background-img').html('<img src="/asset/img/background-evening.jpg">');
-        $('#time_content_greeting').find('span').text('Good Evening'+tmp_greeting_words);
-    }
-
     initializeLocalStorage();
 
     //date
@@ -393,7 +366,6 @@ function initialize()
 
 
 
-    $('.background-img').show('1500');
 }
 
 function getTime(){
@@ -544,3 +516,41 @@ function settingGeneral(display_element, localstorage_element, css_active, css_d
         }
     }
 }
+
+function setBackgroundImg()
+{
+    //set background
+    var dt = new Date();
+    var hour = dt.getHours();
+    var masatab_user_name = localStorage.getItem("user_name");
+    var tmp_greeting_words ='';
+
+    if (masatab_user_name != null)
+    {
+        var masatab_user_name_arr = JSON.parse(masatab_user_name);
+        tmp_greeting_words = ', '+masatab_user_name_arr['user_name'];
+    }
+
+    if(parseInt(hour)>=6 && parseInt(hour)<=11){
+        $('.background-img').html('<img src="/asset/img/background-morning.jpeg">');
+        $('#time_content_greeting').find('span').text('Good Morning'+tmp_greeting_words);
+    } else if (parseInt(hour)>=12 && parseInt(hour)<=17){
+        $('.background-img').html('<img src="/asset/img/background-noon.jpg">');
+        $('#time_content_greeting').find('span').text('Good Afternoon'+tmp_greeting_words);
+    } else {
+        $('.background-img').html('<img src="/asset/img/background-evening.jpg">');
+        $('#time_content_greeting').find('span').text('Good Evening'+tmp_greeting_words);
+    }
+
+
+}
+$(window).on("load", function() {
+    $('#freetab_main').hide();
+    $('.ackground-img').hide();
+
+    setBackgroundImg();
+    $('.background-img').fadeIn('2000');
+    start();
+    $('#freetab_main').fadeIn('3000');
+
+});

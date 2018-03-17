@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db3115a3-d0f0-4108-afbf-2fcf918292d0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/asset/js/setting.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/asset/css/custom.css" afterPath="$PROJECT_DIR$/asset/css/custom.css" />
+      <change beforePath="$PROJECT_DIR$/asset/img/background-evening.jpg" afterPath="$PROJECT_DIR$/asset/img/background-evening.jpg" />
       <change beforePath="$PROJECT_DIR$/asset/js/custom.js" afterPath="$PROJECT_DIR$/asset/js/custom.js" />
-      <change beforePath="$PROJECT_DIR$/asset/js/news.js" afterPath="$PROJECT_DIR$/asset/js/news.js" />
-      <change beforePath="$PROJECT_DIR$/asset/js/tab.js" afterPath="$PROJECT_DIR$/asset/js/tab.js" />
-      <change beforePath="$PROJECT_DIR$/asset/js/todo.js" afterPath="$PROJECT_DIR$/asset/js/todo.js" />
       <change beforePath="$PROJECT_DIR$/asset/js/weather.js" afterPath="$PROJECT_DIR$/asset/js/weather.js" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
@@ -24,13 +21,23 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manifest.json">
+    <leaf>
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-              <folding />
+            <state relative-caret-position="434">
+              <caret line="412" column="21" lean-forward="false" selection-start-line="412" selection-start-column="21" selection-end-line="412" selection-end-column="21" />
+              <folding>
+                <element signature="e#320#487#0" expanded="false" />
+                <element signature="e#671#1699#0" expanded="false" />
+                <element signature="e#1757#1793#0" expanded="false" />
+                <element signature="e#1858#2265#0" expanded="false" />
+                <element signature="e#2330#2575#0" expanded="false" />
+                <element signature="e#2641#3363#0" expanded="false" />
+                <element signature="n#!!block;n#colortheme_event#0" expanded="false" />
+                <element signature="n#!!block;n#changecolortheme#0" expanded="false" />
+                <element signature="n#!!block;n#loadWeather#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,17 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tab</find>
-      <find>tr</find>
-      <find>search</find>
-      <find>scroll</find>
-      <find>scrol</find>
-      <find>x-</find>
-      <find>setting-table</find>
-      <find>user-profile</find>
-      <find>select</find>
-      <find>fas</find>
-      <find>select_button_class</find>
       <find>pop</find>
       <find>select_news_categoty</find>
       <find>load</find>
@@ -65,7 +61,6 @@
       <find>setting</find>
       <find>&amp;</find>
       <find>select_weather_unit</find>
-      <find>hide</find>
       <find>hover</find>
       <find>news-list</find>
       <find>todo</find>
@@ -76,6 +71,18 @@
       <find>co</find>
       <find>general_</find>
       <find>table</find>
+      <find>jpg</find>
+      <find>h4</find>
+      <find>searc</find>
+      <find>none</find>
+      <find>h1</find>
+      <find>searchsearch</find>
+      <find>Search_form</find>
+      <find>search</find>
+      <find>hide</find>
+      <find>time</find>
+      <find>pm</find>
+      <find>small</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -95,17 +102,17 @@
         <option value="$PROJECT_DIR$/asset/js/bootstrap-toggle.min.js" />
         <option value="$PROJECT_DIR$/asset/js/quote.js" />
         <option value="$PROJECT_DIR$/asset/js/stopwatch.js" />
-        <option value="$PROJECT_DIR$/asset/js/timer.js" />
         <option value="$PROJECT_DIR$/asset/js/reallySimpleWeather.js" />
-        <option value="$PROJECT_DIR$/asset/js/weather.js" />
         <option value="$PROJECT_DIR$/asset/js/todo.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/asset/js/custom.js" />
         <option value="$PROJECT_DIR$/asset/js/tab.js" />
-        <option value="$PROJECT_DIR$/asset/css/custom.css" />
         <option value="$PROJECT_DIR$/asset/js/setting.js" />
         <option value="$PROJECT_DIR$/asset/js/news.js" />
+        <option value="$PROJECT_DIR$/asset/js/weather.js" />
+        <option value="$PROJECT_DIR$/asset/js/custom.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/asset/js/timer.js" />
         <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/asset/css/custom.css" />
       </list>
     </option>
   </component>
@@ -139,7 +146,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -163,12 +169,19 @@
               <item name="freetab" type="b2602c69:ProjectViewProjectNode" />
               <item name="freetab" type="462c0819:PsiDirectoryNode" />
               <item name="asset" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freetab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freetab" type="462c0819:PsiDirectoryNode" />
+              <item name="asset" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,12 +261,13 @@
       <workItem from="1521171414177" duration="8303000" />
       <workItem from="1521219032774" duration="351000" />
       <workItem from="1521260097227" duration="1328000" />
-      <workItem from="1521261494722" duration="1065000" />
+      <workItem from="1521261494722" duration="1282000" />
+      <workItem from="1521277699806" duration="4216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85623000" />
+    <option name="totallyTimeSpent" value="90056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -310,27 +324,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1950">
-          <caret line="130" column="18" lean-forward="false" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -468,13 +461,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/stopwatch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/img/background3.jpeg" />
     <entry file="file://$PROJECT_DIR$/asset/img/eclipse.gif">
       <provider selected="true" editor-type-id="images">
@@ -493,13 +479,6 @@
     <entry file="file://$PROJECT_DIR$/asset/img/background-morning.jpeg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/timer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="53" column="20" lean-forward="false" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/reallySimpleWeather.js">
@@ -530,13 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/todo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -563,6 +535,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/sectional.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/background-evening.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/tab.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/setting.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -571,51 +564,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/tab.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="392" column="0" lean-forward="true" selection-start-line="392" selection-start-column="0" selection-end-line="392" selection-end-column="0" />
+        <state relative-caret-position="398">
+          <caret line="95" column="23" lean-forward="false" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
           <folding>
-            <element signature="n#!!block;n#loadWeather#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#0;n#header#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h4#0;n#div#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#h4#0;n#div#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#main#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/asset/js/timer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="117" column="77" lean-forward="false" selection-start-line="117" selection-start-column="70" selection-end-line="117" selection-end-column="77" />
+        <state relative-caret-position="15">
+          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/custom.css">
+    <entry file="file://$PROJECT_DIR$/asset/js/stopwatch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/weather.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="801">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="1005">
+          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
-            <marker date="1521218775738" expanded="true" signature="1163:1169" ph=" " />
-            <marker date="1521218775738" expanded="true" signature="1258:1279" ph="..." />
-            <marker date="1521218775738" expanded="true" signature="2738:2744" ph=" " />
-            <marker date="1521218775738" expanded="true" signature="2780:2786" ph=" " />
-            <marker date="1521218775738" expanded="true" signature="2860:2881" ph="..." />
+            <marker date="1521293170185" expanded="true" signature="1163:1169" ph=" " />
+            <marker date="1521293170185" expanded="true" signature="1258:1279" ph="..." />
+            <marker date="1521293170185" expanded="true" signature="2771:2777" ph=" " />
+            <marker date="1521293170185" expanded="true" signature="2851:2872" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/todo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-292">
+          <caret line="27" column="7" lean-forward="true" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -624,6 +629,40 @@
         <state relative-caret-position="60">
           <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="125" column="16" lean-forward="false" selection-start-line="125" selection-start-column="16" selection-end-line="125" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="295" column="0" lean-forward="true" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="412" column="21" lean-forward="false" selection-start-line="412" selection-start-column="21" selection-end-line="412" selection-end-column="21" />
+          <folding>
+            <element signature="e#320#487#0" expanded="false" />
+            <element signature="e#671#1699#0" expanded="false" />
+            <element signature="e#1757#1793#0" expanded="false" />
+            <element signature="e#1858#2265#0" expanded="false" />
+            <element signature="e#2330#2575#0" expanded="false" />
+            <element signature="e#2641#3363#0" expanded="false" />
+            <element signature="n#!!block;n#colortheme_event#0" expanded="false" />
+            <element signature="n#!!block;n#changecolortheme#0" expanded="false" />
+            <element signature="n#!!block;n#loadWeather#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
