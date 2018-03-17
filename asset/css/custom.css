@@ -34,16 +34,21 @@ video {
 }
 
 h1 {
-    font-size:670%;
+    font-size:700%;
 }
 
 .weather-box {
     position:fixed;
     top:2%;
-    right:2%;
+    right:1%;
+    text-align: left;
 }
 .weather-box > p {
-    font-size:70%;
+    font-size:64%;
+}
+
+#weather {
+    margin-left: 20%;
 }
 
 .setting-box {
@@ -83,7 +88,7 @@ h1 {
     /*float:right; margin-bottom: 10px;margin-right: 2px;*/
     position:fixed;
     right:3%;
-    bottom:8.5%;
+    bottom:4%;
     z-index: 2;
 }
 
@@ -128,8 +133,9 @@ li {
 }
 
 .popover {
+
     background-color: #09092a;
-    min-width:31%;
+    min-width:35%;
     border-width: 0px;
     box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
 }
@@ -137,11 +143,23 @@ li {
 .setting-table {
     width:100%;
     color:white;
+    margin-left:12%;
+
 }
 
+.setting-table-div {
+    /*border:1px red solid;*/
+    max-height: 300px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.option_header {
+    font-weight: bold;
+}
 td {
-    text-align: center;
-    min-width: 50px;
+    text-align: left;
+    min-width: 45px;
 }
 
 .switch {
@@ -207,7 +225,7 @@ input:checked + .slider:before {
     box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
     background: transparent;
     border-radius: 20px;
-    margin-bottom:5%;
+    margin-bottom:2%;
     color:white;
     width:45%;
     text-align: center;
@@ -277,7 +295,7 @@ input:checked + .slider:before {
 }
 
 .user-profile, .new-user-register, .contact_info, .about_info > p{
-    margin-left:2%;
+    /*margin-left:2%;*/
 }
 
 
@@ -403,7 +421,7 @@ button:hover {
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 1px;
     font-size: 13px;
     width: 25%;
     border-radius: 0px;
@@ -422,6 +440,23 @@ button:hover {
     font-weight: bold;
     font-size: 14px;
 }
+
+.active > .fa-cogs {
+    color:orangered;
+}
+
+.active > .fa-user {
+    color:greenyellow;
+}
+
+.active > .fa-envelope-square {
+    color:cornflowerblue;
+}
+
+.active > .fa-info {
+    color: orange;
+}
+
 
 .photo_taken_by
 {

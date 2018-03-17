@@ -136,6 +136,7 @@ function initializeLocalStorage()
     var masatab_items = localStorage.getItem("todo_items");
     var masatab_dateformat = localStorage.getItem("dateformat");
     var masatab_hourFormat = localStorage.getItem("hourformat");
+    var masatab_degree_default = localStorage.getItem("degree_default");
 
     if (masatab_weather != null) {
         var masatab_weather_arr = JSON.parse(masatab_weather);
@@ -255,6 +256,20 @@ function initializeLocalStorage()
         }
     }
 
+    if (masatab_degree_default != null) {
+
+        var masatab_degree_default_arr = JSON.parse(masatab_degree_default);
+        unit_tmp = masatab_degree_default_arr['degree_default'];
+        if (unit_tmp === '\u2103\u0020') {
+            $("#select_weather_unit option[value='c']").attr('selected', 'selected');
+        } else {
+            $("#select_weather_unit option[value='f']").attr('selected', 'selected');
+        }
+
+    } else {
+        localStorage.setItem('select_weather_unit', JSON.stringify({ 'select_weather_unit': 'c' }));
+    }
+
     if (masatab_dateformat != null) {
         var masatab_dateformat_arr = JSON.parse(masatab_dateformat);
         dateformat_tmp = masatab_dateformat_arr['dateformat'];
@@ -355,7 +370,6 @@ function initialize()
     getWeather();
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(function(position) {
-                console.log(position);
                 var lat = position.coords.latitude;
                 var long = position.coords.longitude;
 
@@ -429,14 +443,12 @@ function get12Time() {
 }
 
 function loadWeather(location, woeid) {
-    console.log(location);
     reallySimpleWeather.weather({
         wunderkey: '',
         location: location,
         woeid: woeid,
         unit: 'c',
         success: function(weather) {
-            console.log(weather);
             var temp = weather.temp;
             if(degree_default!='\u2103\u0020'){
                 temp = weather.alt.temp;

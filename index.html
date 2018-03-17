@@ -67,8 +67,8 @@
                 </ul>
             </div>
             <div  class="todo-box-under" style="">
-                <a class="btn" id="add_item_button" style=""><i class="fas fa-list-ul"></i></a>
-                <table class="" style="min-height:60px;">
+                <a class="btn" id="add_item_button" style=""><i class="fas fa-list-ul" style="font-size:116%;"></i>&nbsp;&nbsp;<small>ToDo</small></a>
+                <table class="add_item_table" style="min-height:60px;">
                     <tr>
                         <td style="width:10%;">
                             <form id="new-task-input-form" style="display:none;">
@@ -112,112 +112,171 @@
     </div>
 
     <div id="popover-setting-content" style="display: none;">
-        <button class="tablink active" id="general_tab">General</button>
-        <button class="tablink" style="" id="user_tab">User</button>
-        <button class="tablink" style="" id="contact_tab">Contact</button>
-        <button class="tablink" style="" id="about_tab">About</button>
-        <br><br>
-        <!--<hr style="background-color:dimgrey;">-->
+        <button class="tablink active" id="general_tab"><i class="fas fa-cogs"></i> <small>General</small></button>
+        <button class="tablink" style="" id="user_tab"><i class="fas fa-user"></i> <small>User</small></button>
+        <button class="tablink" style="" id="contact_tab"><i class="fas fa-envelope-square"></i> <small>Contact</small></button>
+        <button class="tablink" style="" id="about_tab"><i class="fas fa-info"></i> <small>About</small></button>
         <br>
-        <table class="setting-table">
-            <!--<caption>setting</caption>-->
-            <tr>
-                <td><hr style='opacity:0;'></td>
-            </tr>
-            <tr>
-                <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Display Options</td>
-            </tr>
-            <tr>
-                <td>Date</td>
-                <td>
-                    <label class="switch">
-                        <input class = 'setting-check' id = 'date_button' type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>Weather</td>
-                <td>
-                    <label class="switch">
-                        <input class = 'setting-check' id = 'weather_button' type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>Search</td>
-                <td>
-                    <label class="switch">
-                        <input class = 'setting-check' id = 'search_button' type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>News</td>
-                <td>
-                    <label class="switch">
-                        <input class = 'setting-check' id = 'news_button' type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>ToDo</td>
-                <td>
-                    <label class="switch">
-                        <input class = 'setting-check' id = 'todo_button' type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>Quote</td>
-                <td>
-                    <label class="switch">
-                        <input class = 'setting-check' id = 'quote_button' type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>Color Theme</td>
-                <td>
-                    <label class="switch">
-                        <input id='changecolor' type="color" value="#f5eafa" style="display:block; margin-left:8px;">
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td><hr style='opacity:0;'></td>
-            </tr>
-            <tr>
-                <td style='opacity:0.7;margin-top:-30px; position:absolute;'>Format Options</td>
-            </tr>
-            <tr>
-                <td>Time Format</td>
-                <td>
-                    <label class="switch">
-                        <select id="date-format-select" class="date-format-select-class">
-                            <option value="0">HH:MM:SS</option>
-                            <option value="1">HH:MM</option>
-                        </select>
-                    </label>
-                </td>
-            </tr>
-            <tr>
-                <td>Hour Format</td>
-                <td>
-                    <label class="switch">
-                        <select id="hour-format-select" class="hour-format-select-class">
-                            <option value="0">24-hour</option>
-                            <option value="1">12-hour</option>
-                        </select>
-                    </label>
-                </td>
-            </tr>
-        </table>
+        <hr style="background-color:dimgrey;">
+
+        <div class="setting-table-div">
+            <table class="setting-table">
+                <tr>
+                    <!--<td class="option_header">Display Options</td>-->
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>
+                        <label class="switch">
+                            <input class = 'setting-check' id = 'date_button' type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Weather</td>
+                    <td>
+                        <label class="switch">
+                            <input class = 'setting-check' id = 'weather_button' type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Search</td>
+                    <td>
+                        <label class="switch">
+                            <input class = 'setting-check' id = 'search_button' type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>News</td>
+                    <td>
+                        <label class="switch">
+                            <input class = 'setting-check' id = 'news_button' type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ToDo</td>
+                    <td>
+                        <label class="switch">
+                            <input class = 'setting-check' id = 'todo_button' type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quote</td>
+                    <td>
+                        <label class="switch">
+                            <input class = 'setting-check' id = 'quote_button' type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Color Theme</td>
+                    <td>
+                        <label class="switch">
+                            <input id='changecolor' type="color" value="#f5eafa" style="display:block; margin-left:8px;">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Time Format</td>
+                    <td>
+                        <label class="switch">
+                            <select id="date-format-select" class="date-format-select-class">
+                                <option value="0">HH:MM:SS</option>
+                                <option value="1">HH:MM</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hour Format</td>
+                    <td>
+                        <label class="switch">
+                            <select id="hour-format-select" class="hour-format-select-class">
+                                <option value="0">24-hour</option>
+                                <option value="1">12-hour</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <!--<td class="option_header">News</td>-->
+                </tr>
+                <tr>
+                    <td>News Category</td>
+                    <td>
+                        <label class="switch">
+                            <select id="select_news_category" class="select_button_class">
+                                <option value="technology">Technology</option>
+                                <option value="business">Business</option>
+                                <option value="sports">Sports</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <!--<td class="option_header">Weather</td>-->
+                </tr>
+                <tr>
+                    <td>Degree Unit</td>
+                    <td>
+                        <label class="switch">
+                            <select id="select_weather_unit" class="select_button_class">
+                                <option value="c">C</option>
+                                <option value="f">F</option>
+                            </select>
+                        </label>
+                    </td>
+                </tr>
+
+
+                <!--<tr>-->
+                <!--<td><hr style='opacity:0;'></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td style='opacity:0.7;margin-top:-30px; position:absolute;'>Date</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td>Format</td>-->
+                <!--<td>-->
+                <!--<label class="switch">-->
+                <!--<select id="" class="">-->
+                <!--<option value="0">dd/mm/yyyy</option>-->
+                <!--<option value="1">mm/dd/yyyy</option>-->
+                <!--</select>-->
+                <!--</label>-->
+                <!--</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td><hr style='opacity:0;'></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td style='opacity:0.7;margin-top:-30px; position:absolute;'>Search</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                <!--<td>Engine</td>-->
+                <!--<td>-->
+                <!--<label class="switch">-->
+                <!--<select id="" class="">-->
+                <!--<option value="0">Google</option>-->
+                <!--<option value="1">Bing</option>-->
+                <!--</select>-->
+                <!--</label>-->
+                <!--</td>-->
+                <!--</tr>-->
+            </table>
+        </div>
+
         <div class="user-profile">
             <p><span class="greeting_in_user_profile"></span>, <span class="user_name"></span></p>
         </div>
@@ -248,5 +307,6 @@
     <script src="/asset/js/quote.js"></script>
     <script src="/asset/js/tab.js"></script>
     <script src="/asset/js/weather.js"></script>
+    <script src="/asset/js/setting.js"></script>
 </body>
 </html>
