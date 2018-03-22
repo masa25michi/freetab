@@ -6,8 +6,8 @@ $(function(){
         ids = ['select_news_category', 'select_weather_unit'];
 
         if (jQuery.inArray( id, ids ) !==-1) {
+            $("#"+id+" option:selected").removeAttr("selected");
             $("#"+id+" option[value="+val_tmp+"]").attr('selected', 'selected');
-            $("#"+id+" option[value='"+val_tmp+"']").attr('selected', 'selected');
 
             if (id === 'select_weather_unit') {
                 if (val_tmp === 'c') {
@@ -15,7 +15,6 @@ $(function(){
                 } else {
                     changeWeatherUnit('\u2109\u0020');
                 }
-
             } else if (id === 'select_news_category') {
                 changeNewsCategory(val_tmp);
             }

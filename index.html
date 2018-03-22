@@ -39,11 +39,11 @@
         </header>
 
         <div class="weather-box"style="">
-            <p id = 'weather'>Loading...<br>Please Wait</p>
+            <p id = 'weather'>Loading...</p>
         </div>
 
         <div class="setting-box" style="">
-            <a tabindex="0" class="btn " data-container="body" data-toggle="popover" data-placement="bottom" >
+            <a tabindex="0" class="btn "id="setting_icon"  data-container="body" data-toggle="popover" data-placement="bottom" >
                 <i class="fas fa-wrench" style="color:darkgrey"></i>
             </a>
 
@@ -51,17 +51,21 @@
                 <i class="fas fa-stopwatch" style="color:darkgrey"></i>
             </a>
 
+            <a tabindex="0" class="btn" id="link_icon" data-toggle="link_popover" data-placement="bottom">
+                <i class="fas fa-link" style="color:darkgrey"></i>
+            </a>
+
             <a tabindex="0" class="btn" id="time_date_icon" style="display:none;">
                 <i class="fas fa-clock" style="color:darkgrey"></i>
             </a>
 
         </div>
-        <div class="news-box">
+        <div class="news-box" style="display: none;">
             <ul class="news-list">
             </ul>
             <small>Resources from <a href="https://newsapi.org/" style="text-decoration: underline;">NewsApi.org</a></small>
         </div>
-        <div class="todo-box" style="">
+        <div class="todo-box" style="display: none;">
             <div class="todo-box-upper">
                 <ul id="incomplete-tasks">
                 </ul>
@@ -83,14 +87,14 @@
             </div>
         </div>
 
-        <main role="main" class="inner cover" style="min-width:550px;">
+        <main role="main" class="inner cover" style="min-width:550px; margin-bottom:15%;">
             <div id="time_content">
-                <h4 id="time_content_greeting" style="min-height:30px;"><span style="display:none;">Good Morning, Masa</span></h4>
+                <h4 id="time_content_greeting" style="min-height:30px;"><span style="display:none;">Good Morning</span></h4>
                 <h1 id="time" style="min-height:150px;"></h1>
                 <h3 id = 'displaydate' style="height:50px;"></h3>
 
                 <br><br>
-                <form action="https://google.com/search" method="get" style="min-height:30px;" class="search_form">
+                <form action="https://google.com/search" method="get" style="min-height:30px; display:none;" class="search_form">
                     <i class="fas fa-search"></i>
                     <input name = "q" value = "" type="text" class="form-control search" placeholder="Google Search">
                 </form>
@@ -110,9 +114,17 @@
 
         <footer class="mastfoot mt-auto" style=" width:100%;" >
             <div class="photo_taken_by" style="">
-                <p><a href="https://www.pexels.com/u/apasaric/"><i class="far fa-heart" style="color:mediumvioletred;"></i>Aleksandar Pasaric</a></p>
+                <!--<p><a href="https://www.pexels.com/u/apasaric/"><i class="far fa-heart" style="color:mediumvioletred;"></i>Aleksandar Pasaric</a></p>-->
             </div>
         </footer>
+    </div>
+
+    <div id="popover-link-box" style="display: none;">
+        <ul>
+            <li><a id="chrome_tab_link" class="link-box-item"><i class="fab fa-chrome" style="color:orangered"></i>&nbsp;&nbsp;Chrome Tab</a></li>
+            <li><a id="chrome_apps_link" class="link-box-item"><i class="fab fa-chrome" style="color:orangered"></i>&nbsp;&nbsp;Chrome Apps</a></li>
+            <li><a href="https://www.google.com/maps" class="link-box-item"><i class="fas fa-map" style="color:greenyellow"></i>&nbsp;&nbsp;Maps</a></li>
+        </ul>
     </div>
 
     <div id="popover-setting-content" style="display: none;">
@@ -120,125 +132,113 @@
         <button class="tablink" style="" id="user_tab"><i class="fas fa-user"></i> <small>User</small></button>
         <button class="tablink" style="" id="contact_tab"><i class="fas fa-envelope-square"></i> <small>Contact</small></button>
         <button class="tablink" style="" id="about_tab"><i class="fas fa-info"></i> <small>About</small></button>
-        <br>
-        <hr style="background-color:dimgrey;">
-
+        <hr>
         <div class="setting-table-div">
             <table class="setting-table">
-                <tr>
-                    <!--<td class="option_header">Display Options</td>-->
-                </tr>
-                <tr>
+                <!--<tr>-->
+                    <!--&lt;!&ndash;<td class="option_header">Display Options</td>&ndash;&gt;-->
+                <!--</tr>-->
+                <tr class="setting-table-tr">
                     <td>Date</td>
-                    <td>
+                    <td class="setting-table-tr-label">
                         <label class="switch">
                             <input class = 'setting-check' id = 'date_button' type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </td>
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>Weather</td>
-                    <td>
+                    <td class="setting-table-tr-label">
                         <label class="switch">
                             <input class = 'setting-check' id = 'weather_button' type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </td>
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>Search</td>
-                    <td>
+                    <td class="setting-table-tr-label">
                         <label class="switch">
                             <input class = 'setting-check' id = 'search_button' type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </td>
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>News</td>
-                    <td>
+                    <td class="setting-table-tr-label">
                         <label class="switch">
                             <input class = 'setting-check' id = 'news_button' type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </td>
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>ToDo</td>
-                    <td>
+                    <td class="setting-table-tr-label">
                         <label class="switch">
                             <input class = 'setting-check' id = 'todo_button' type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </td>
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>Quote</td>
-                    <td>
+                    <td class="setting-table-tr-label">
                         <label class="switch">
                             <input class = 'setting-check' id = 'quote_button' type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </td>
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>Color Theme</td>
-                    <td>
-                        <label class="switch">
-                            <input id='changecolor' type="color" value="#f5eafa" style="display:block; margin-left:8px;">
-                        </label>
+                    <td class="setting-table-tr-label">
+                        <input id='changecolor' type="color" value="#f5eafa" style="display:block; margin-left:8px;">
                     </td>
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>Time Format</td>
-                    <td>
-                        <label class="switch">
-                            <select id="date-format-select" class="date-format-select-class">
-                                <option value="0">HH:MM:SS</option>
-                                <option value="1">HH:MM</option>
-                            </select>
-                        </label>
+                    <td class="setting-table-tr-label">
+                        <select id="date-format-select" class="date-format-select-class">
+                            <option value="0">HH:MM:SS</option>
+                            <option value="1">HH:MM</option>
+                        </select>
                     </td>
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>Hour Format</td>
-                    <td>
-                        <label class="switch">
-                            <select id="hour-format-select" class="hour-format-select-class">
-                                <option value="0">24-hour</option>
-                                <option value="1">12-hour</option>
-                            </select>
-                        </label>
+                    <td class="setting-table-tr-label">
+                        <select id="hour-format-select" class="hour-format-select-class">
+                            <option value="0">24-hour</option>
+                            <option value="1">12-hour</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
                     <!--<td class="option_header">News</td>-->
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>News Category</td>
-                    <td>
-                        <label class="switch">
-                            <select id="select_news_category" class="select_button_class">
-                                <option value="technology">Technology</option>
-                                <option value="business">Business</option>
-                                <option value="sports">Sports</option>
-                            </select>
-                        </label>
+                    <td class="setting-table-tr-label">
+                        <select id="select_news_category" class="select_button_class">
+                            <option value="technology">Technology</option>
+                            <option value="business">Business</option>
+                            <option value="sports">Sports</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
                     <!--<td class="option_header">Weather</td>-->
                 </tr>
-                <tr>
+                <tr class="setting-table-tr">
                     <td>Degree Unit</td>
-                    <td>
-                        <label class="switch">
-                            <select id="select_weather_unit" class="select_button_class">
-                                <option value="c">C</option>
-                                <option value="f">F</option>
-                            </select>
-                        </label>
+                    <td class="setting-table-tr-label">
+                        <select id="select_weather_unit" class="select_button_class">
+                            <option value="c">C</option>
+                            <option value="f">F</option>
+                        </select>
                     </td>
                 </tr>
 
@@ -304,7 +304,6 @@
     <script src="/asset/js/timer.js"></script>
     <script src="/asset/js/popper.min.js"></script>
     <script src="/asset/js/bootstrap.min.js"></script>
-    <script src="asset/js/reallySimpleWeather.js" async></script>
     <script src="/asset/js/custom.js"></script>
     <script src="/asset/js/todo.js"></script>
     <script src="/asset/js/news.js"></script>
@@ -312,5 +311,6 @@
     <script src="/asset/js/tab.js"></script>
     <script src="/asset/js/weather.js"></script>
     <script src="/asset/js/setting.js"></script>
+    <script src="/asset/js/link.js"></script>
 </body>
 </html>

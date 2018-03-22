@@ -1,6 +1,3 @@
-$(function(){
-    getNews();
-});
 
 function newsitem (topic,content, link)
 {
@@ -20,12 +17,9 @@ function getNews ()
     if (news_categoryObject != null) {
         arr = JSON.parse(news_categoryObject);
         category = arr['news_category'];
-
     } else {
         localStorage.setItem('news_category', JSON.stringify({'news_category':category}));
     }
-
-    $("#select_news_category option[value='"+category+"']").attr('selected', 'selected');
 
     $.ajax({
         type: 'GET',

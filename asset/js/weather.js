@@ -30,7 +30,7 @@ function getWeather() {
                     tmp = tmp * 1.8 + 32;
                 }
                 html = '<h3 id="weather_header">'+Math.round(tmp)+' <span class="degree_default_text">'+degree_default+'</span></h3>';
-                html += '<p>'+data['name']+' , '+data['sys']['country']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+data['weather'][0]['icon']+'.png" style="width:20%;height:20%;"> <br>';
+                html += '<p>'+data['name']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+data['weather'][0]['icon']+'.png" style="width:25%;height:25%;"> <br>';
                 html += 'Humidity: '+data['main']['humidity']+'%</p>';
                 //
                 var tempobject = {
@@ -73,9 +73,8 @@ function changeWeatherUnit(unit) {
                 temp = temp * 1.8 + 32;
             }
         }
-
         html = '<h3 id="weather_header">'+Math.round(temp)+' <span class="degree_default_text">'+unit+'</span></h3>';
-        html += '<p>'+arr['name']+' , '+arr['country']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+arr['icon']+'.png" style="width:20%;height:20%;"> <br>';
+        html += '<p>'+arr['name']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+arr['icon']+'.png" style="width:25%;height:25%;"> <br>';
         html += 'Humidity: '+arr['humidity']+'%</p>';
 
         var tempobject = {

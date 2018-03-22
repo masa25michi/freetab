@@ -7,88 +7,9 @@ var hourFormat = 0; //0-> 24-hour 1-> 12-hour
 
 function start(){
 
-    initialize();
-
-    window.setInterval(function(){
-        if (hourFormat === 0) {
-            var time = getTime();
-        } else {
-            var time = get12Time();
-        }
-        $("#time").html(time);
-    }, 1000);
-
     window.setTimeout(function(){
-        $('#time_content_greeting').find('span').hide().fadeIn('8000');
-    },1500);
-
-    $('body').on('click','.setting-check',function () {
-        id = $(this).attr('id');
-
-        if (id === 'date_button') {
-            settingGeneral('#displaydate','show_date', {'display':'block'},{'display':'none'});
-        } else if(id === 'weather_button') {
-            settingGeneral('.weather-box','show_weather', {'display':'block'},{'display':'none'});
-        } else if(id === 'search_button' ) {
-            settingGeneral('.search_form','show_search', {'display':'block'},{'display':'none'});
-        } else if(id === 'news_button' ) {
-            settingGeneral('.news-box','show_news', {'display':'block'},{'display':'none'});
-        } else if(id === 'todo_button' ) {
-            settingGeneral('.todo-box','show_todo', {'display':'block'},{'display':'none'});
-        } else if(id === 'quote_button' ) {
-            settingGeneral('.quote-box','show_quote', {'display':'block'},{'display':'none'});
-        }
-        if(this.checked ) {
-            $('#'+id).attr('checked', true);
-        } else {
-            $('#'+id).attr('checked', false);
-        }
-
-    });
-
-    $('body').on('change','#changecolor',function (e) {
-        colortheme_event(e);
-    });
-
-    $('body').on('change','#date-format-select',function (e) {
-        dateFormat = parseInt($(this).val());
-        // $('.date-format-select-class').val(dateFormat);
-        // $(".date-format-select-class option[value='"+dateFormat+"']").attr('selected', 'selected');
-        $(".date-format-select-class option[value="+$(this).val()+"]").attr('selected', 'selected');
-
-        localStorage.setItem('dateformat', JSON.stringify({ 'dateformat': dateFormat }));
-    });
-
-    $('body').on('change','#hour-format-select',function (e) {
-        hourFormat = parseInt($(this).val());
-        $(".hour-format-select-class option[value="+$(this).val()+"]").attr('selected', 'selected');
-
-        localStorage.setItem('hourformat', JSON.stringify({ 'hourformat': hourFormat }));
-    });
-
-    $('body').on('submit','#form-register-input',function (e) {
-
-        var values = $( this ).serializeArray();
-        user_name = values[0]['value'];
-        localStorage.setItem('user_name', JSON.stringify({ 'user_name': user_name }));
-        $('.new-user-register').hide();
-        var today = new Date();
-        var curHr = today.getHours();
-        var greeting_words = '';
-
-        if (curHr < 12) {
-            greeting_words = 'Good Morning';
-        } else if (curHr < 18) {
-            greeting_words = 'Good Afternoon';
-        } else {
-            greeting_words = 'Good Evening'
-        }
-
-        $('.greeting_in_user_profile').text(greeting_words);
-        $('.user_name').text(user_name);
-        $('.user-profile').show('slow');
-        e.preventDefault();
-    });
+        initialize();
+    },300);
 
 }
 
@@ -104,20 +25,16 @@ function changecolortheme(color){
     $('button').css('color',color);
     $('a:link').css('color',color);
     $('a:visited').css('color',color);
-
 }
 
 function hideAllElements()
 {
     $('.weather-box').hide();
-    // $('.setting-box').hide();
     $('.news-box').hide();
     $('.todo-box').hide();
-    // $('#time').hide();
     $('#displaydate').hide();
     $('.search').hide();
     $('.photo_taken_by').hide();
-    // $('form').hide();
 }
 
 function initializeLocalStorage()
@@ -299,6 +216,7 @@ function initializeLocalStorage()
     }
 
 }
+
 function initialize()
 {
     var masatab_is_firsttime = localStorage.getItem("is_firsttime");
@@ -330,6 +248,8 @@ function initialize()
 
     initializeLocalStorage();
 
+
+
     //date
     var d = new Date();
     var month = d.getMonth()+1;
@@ -341,6 +261,14 @@ function initialize()
 
     //weather
     getWeather();
+
+    //news
+    getNews();
+
+    //quote
+    getQuote();
+
+
     if (navigator.geolocation) {
         navigator.geolocation.watchPosition(function(position) {
                 var lat = position.coords.latitude;
@@ -365,6 +293,114 @@ function initialize()
     }
 
 
+    // chrome.bookmarks.getRecent(5, function(results) {
+    //     console.log(results);
+    // });
+
+
+    window.setInterval(function(){
+        if (hourFormat === 0) {
+            var time = getTime();
+        } else {
+            var time = get12Time();
+        }
+        $("#time").html(time);
+    }, 1000);
+
+    window.setTimeout(function(){
+        $('#time_content_greeting').find('span').hide().fadeIn('8000');
+    },1500);
+
+    $('body').on('click','.link-box-item',function () {
+        id = $(this).attr('id');
+
+        if (id === 'chrome_apps_link') {
+            chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+
+                var active = tabs[0].id;
+
+                // Set the URL to the Local-NTP (New Tab Page)
+                chrome.tabs.update(active, { url: "chrome://apps/" }, function() { });
+            });
+        } else if (id === 'chrome_tab_link') {
+            chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+
+                var active = tabs[0].id;
+
+                // Set the URL to the Local-NTP (New Tab Page)
+                chrome.tabs.update(active, { url: "chrome-search://local-ntp/local-ntp.html" }, function() { });
+            });
+        }
+
+    });
+
+
+    $('body').on('click','.setting-check',function () {
+        id = $(this).attr('id');
+
+        if (id === 'date_button') {
+            settingGeneral('#displaydate','show_date', {'display':'block'},{'display':'none'});
+        } else if(id === 'weather_button') {
+            settingGeneral('.weather-box','show_weather', {'display':'block'},{'display':'none'});
+        } else if(id === 'search_button' ) {
+            settingGeneral('.search_form','show_search', {'display':'block'},{'display':'none'});
+        } else if(id === 'news_button' ) {
+            settingGeneral('.news-box','show_news', {'display':'block'},{'display':'none'});
+        } else if(id === 'todo_button' ) {
+            settingGeneral('.todo-box','show_todo', {'display':'block'},{'display':'none'});
+        } else if(id === 'quote_button' ) {
+            settingGeneral('.quote-box','show_quote', {'display':'block'},{'display':'none'});
+        }
+        if(this.checked ) {
+            $('#'+id).attr('checked', true);
+        } else {
+            $('#'+id).attr('checked', false);
+        }
+    });
+
+    $('body').on('change','#changecolor',function (e) {
+        colortheme_event(e);
+    });
+
+    $('body').on('change','#date-format-select',function (e) {
+        dateFormat = parseInt($(this).val());
+        // $('.date-format-select-class').val(dateFormat);
+        // $(".date-format-select-class option[value='"+dateFormat+"']").attr('selected', 'selected');
+        $(".date-format-select-class option[value="+$(this).val()+"]").attr('selected', 'selected');
+
+        localStorage.setItem('dateformat', JSON.stringify({ 'dateformat': dateFormat }));
+    });
+
+    $('body').on('change','#hour-format-select',function (e) {
+        hourFormat = parseInt($(this).val());
+        $(".hour-format-select-class option[value="+$(this).val()+"]").attr('selected', 'selected');
+
+        localStorage.setItem('hourformat', JSON.stringify({ 'hourformat': hourFormat }));
+    });
+
+    $('body').on('submit','#form-register-input',function (e) {
+
+        var values = $( this ).serializeArray();
+        user_name = values[0]['value'];
+        localStorage.setItem('user_name', JSON.stringify({ 'user_name': user_name }));
+        $('.new-user-register').hide();
+        var today = new Date();
+        var curHr = today.getHours();
+        var greeting_words = '';
+
+        if (curHr < 12) {
+            greeting_words = 'Good Morning';
+        } else if (curHr < 18) {
+            greeting_words = 'Good Afternoon';
+        } else {
+            greeting_words = 'Good Evening'
+        }
+
+        $('.greeting_in_user_profile').text(greeting_words);
+        $('.user_name').text(user_name);
+        $('.user-profile').show('slow');
+        e.preventDefault();
+    });
 
 }
 
