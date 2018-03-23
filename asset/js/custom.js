@@ -7,6 +7,11 @@ var hourFormat = 0; //0-> 24-hour 1-> 12-hour
 
 function start(){
 
+    // chrome.downloads.download({
+    //     url: "https://static.pexels.com/photos/916044/pexels-photo-916044.jpeg",
+    //     filename: "/asset/img/test.jpeg" // Optional
+    // });
+
     window.setTimeout(function(){
         initialize();
     },300);
@@ -157,7 +162,7 @@ function initializeLocalStorage()
         var masatab_colortheme_arr = JSON.parse(masatab_colortheme);
         changecolortheme( masatab_colortheme_arr['color']);
     }else{
-        changecolortheme('#f5eafa');
+        changecolortheme('#ffffff');
     }
 
     if(masatab_items !=null){
@@ -227,28 +232,40 @@ function initialize()
         localStorage.setItem('is_firsttime', JSON.stringify({ 'is_firsttime': false }));
     }
 
-    // $('.background-img').hide();
-    $('[data-toggle="popover"]').popover(
-        {
-            html: true,
-            content: function() {
-                return $('#popover-setting-content').html();
-            }
+    // $("[data-toggle=popover]").click(function() {
+    //     console.log('ok');
+    //
+    //     $(this).popover({
+    //         html: true,
+    //         template: '<div class="popover"><div class="arrow"></div>' +
+    //         '<h3 class="popover-title"></h3><div class="popover-content"></div>'+$('#popover-setting-content').html()+'</div>',
+    //         content: function() {
+    //             $("[data-toggle=link_popover]").popover('hide');
+    //             return $('#popover-setting-content').html();
+    //         },
+    //     });
+    // });
+    $("[data-toggle=popover]").popover({
+        html: true,
+        // template: '<div class="popover setting-popover"><div class="arrow"></div>' +
+        // '<h3 class="popover-title"></h3><div class="popover-content">'+$('#popover-setting-content').html()+'</div></div>',
+        content: function() {
+            $("[data-toggle=link_popover]").popover('hide');
+            return $('#popover-setting-content').html();
         }
-    );
+    });
 
-    $('[data-toggle="popover_timer"]').popover(
-        {
-            html: true,
-            content: function() {
-                return $('.timer_div').html();
-            }
+    $("[data-toggle=link_popover]").popover({
+        html: true,
+        template: '<div class="popover link-popover"><div class="arrow"></div>' +
+        '<h3 class="popover-title"></h3><div class="popover-content">'+$('#popover-link-box').html()+'</div></div>',
+        content: function() {
+            $("[data-toggle=popover]").popover('hide');
+            return $('#popover-link-box').html();
         }
-    );
+    });
 
     initializeLocalStorage();
-
-
 
     //date
     var d = new Date();

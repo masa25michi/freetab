@@ -2,7 +2,7 @@
   "name": "Free Style Tab",
   "short_name": "Freetab",
   "description": "Freetab for displaying amazing new tab",
-  "version": "0.2.7.25",
+  "version": "0.2.7.26",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -27,7 +27,7 @@
     "scripts" : ["asset/js/background.js"]
   },
   "optional_permissions": [ "bookmarks", "topSites", "chrome://favicon/" ],
-  "permissions":[ "tabs", "http://*/*","http://quotesondesign.com/*","geolocation", "contextMenus", "unlimitedStorage", "*://*.yahooapis.com/*", "https://newsapi.org/*"],
+  "permissions":[ "tabs", "http://*/*","http://quotesondesign.com/*","geolocation", "contextMenus", "unlimitedStorage", "*://*.yahooapis.com/*", "https://newsapi.org/*","downloads"],
   "offline_enabled": true
 
 }

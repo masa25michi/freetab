@@ -8,14 +8,14 @@ $(function(){
 
         if (id === 'general_tab') {
             $('#general_tab').addClass('active');
-            $('.setting-table-div').show('slow');
+            $('.setting-table-div').show();
 
         } else if(id === 'user_tab') {
             $('#user_tab').addClass('active');
 
             var masatab_user_name = localStorage.getItem("user_name");
             if(masatab_user_name === null) {
-                $('.new-user-register').show('slow');
+                $('.new-user-register').show();
             } else
             {
                 var masatab_user_name_arr = JSON.parse(masatab_user_name);
@@ -34,16 +34,16 @@ $(function(){
 
                 $('.greeting_in_user_profile').text(greeting_words);
                 $('.user_name').text(masatab_user_name_arr['user_name']);
-                $('.user-profile').show('slow');
+                $('.user-profile').show();
             }
         } else if(id === 'contact_tab') {
             $('#contact_info').addClass('active');
 
-            $('.contact_info').show('slow');
+            $('.contact_info').show();
         } else if(id === 'about_tab') {
             $('#about_tab').addClass('active');
 
-            $('.about_info').show('slow');
+            $('.about_info').show();
         }
     });
 

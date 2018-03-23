@@ -1,6 +1,7 @@
 
 function newsitem (topic,content, link)
 {
+    content = " ";
     return  '<li><a href="'+link+'"><h5>'+topic+'</h5><p>'+content+'</p></a></li>';
 }
 
@@ -35,7 +36,7 @@ function getNews ()
                 var masatab_colortheme_arr = JSON.parse(masatab_colortheme);
                 changecolortheme( masatab_colortheme_arr['color']);
             }else{
-                changecolortheme('#f5eafa');
+                changecolortheme('#ffffff');
             }
 
             $('.news-list').fadeIn('2000');
