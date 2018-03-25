@@ -1,6 +1,7 @@
 $(function(){
     $('body').on('change','.select_button_class',function (e) {
         val_tmp = $(this).val();
+        console.log(val_tmp);
         id = $(this).attr('id');
 
         ids = ['select_news_category', 'select_weather_unit'];

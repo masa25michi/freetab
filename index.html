@@ -13,6 +13,8 @@
     <!-- Bootstrap core CSS -->
     <link href="/asset/css/bootstrap.min.css" rel="stylesheet">
     <link href="/asset/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="/asset/css/jquery-ui.min.css" rel="stylesheet">
+    <link href="/asset/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="asset/font/weather-icons/css/weather-icons.min.css" rel="stylesheet">
     <link href="/asset/css/custom.css" rel="stylesheet">
 
@@ -36,7 +38,7 @@
 
         </header>
 
-        <div class="weather-box"style="">
+        <div class="weather-box" style="">
             <p id = 'weather'>Loading...</p>
         </div>
 
@@ -57,12 +59,21 @@
                 <i class="fas fa-clock" style="color:darkgrey"></i>
             </a>
 
+            <a tabindex="0" class="btn" id="calendar_countdown_icon" data-toggle="countdown_popover" data-placement="bottom" >
+                <i class="fas fa-calendar-check" style="color:darkgrey"></i>
+            </a>
         </div>
 
         <div class="news-box" style="display: none;">
-            <ul class="news-list">
-            </ul>
-            <small>Resources from <a href="https://newsapi.org/" style="text-decoration: underline;">NewsApi.org</a></small>
+            <a tabindex="0" class="btn" id="news_box_icon" data-toggle="news_popover" data-placement="bottom" >
+                <i class="fas fa-newspaper" style="color:darkgrey; font-size:120%;"></i>
+            </a>
+
+            <div id="news_box_contents" style="display: none;">
+                <ul class="news-list">
+                </ul>
+                <small>Resources from <a href="https://newsapi.org/" style="text-decoration: underline;">NewsApi.org</a></small>
+            </div>
         </div>
 
         <div class="todo-box" style="display: none;">
@@ -109,6 +120,35 @@
                 <a class="btn btn-lg btn-outline-secondary" id="timer_pause_button" style="display:none">Pause</a>
             </div>
 
+            <div id="count_div" style="color:white; display:none; text-align: center;">
+                <div id="select_count_down" style="display:none;">
+                    <h2 id="">Select Your Important Date</h2>
+                    <br>
+                    <div class="input-group" style="width:40%;margin-left:30%;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-calendar-check" style="color:orangered"></i></span>
+                        </div>
+                        <input type="text" class="datepicker form-control" value="Your Important Date..." >
+                    </div>
+                    <br>
+                    <a class="btn btn-lg btn-outline-warning countdown_back_button" >Back</a>
+                </div>
+
+                <div id="show_count_down" style="display:none;">
+                    <h2 id="head">Countdown to my date:</h2>
+                    <ul>
+                        <li><span id="days"></span>days</li>
+                        <li><span id="hours"></span>Hours</li>
+                        <li><span id="minutes"></span>Minutes</li>
+                        <li><span id="seconds"></span>Seconds</li>
+                    </ul>
+                    <br>
+                    <a class="btn btn-lg btn-outline-warning countdown_back_button" >Back</a>
+                    <a class="btn btn-lg btn-outline-primary countdown_edit_button" >Reset</a>
+
+                </div>
+            </div>
+
 
         </main>
 
@@ -127,6 +167,11 @@
         </ul>
         <!--<a href="" class="link-box-a">Add Link</a>-->
     </div>
+
+    <!--<div id="popover-countdown-box" style="display: none; ">-->
+        <!--<p>Date: <input type="text" class="datepicker"></p>-->
+    <!--</div>-->
+
 
     <div id="popover-setting-content" style="display: none;">
         <button class="tablink active" id="general_tab"><i class="fas fa-cogs"></i> <small>General</small></button>
@@ -302,9 +347,12 @@
 
 
     <script src="/asset/js/jquery-3.2.1.min.js"></script>
+    <script src="/asset/js/jquery-ui.js"></script>
     <script src="/asset/js/timer.js"></script>
     <script src="/asset/js/popper.min.js"></script>
     <script src="/asset/js/bootstrap.min.js"></script>
+    <script src="/asset/js/moment.js"></script>
+    <script src="/asset/js/bootstrap-datetimepicker.min.js"></script>
     <script src="/asset/js/custom.js"></script>
     <script src="/asset/js/todo.js"></script>
     <script src="/asset/js/news.js"></script>
@@ -313,5 +361,7 @@
     <script src="/asset/js/weather.js"></script>
     <script src="/asset/js/setting.js"></script>
     <script src="/asset/js/link.js"></script>
+    <script src="/asset/js/countdown.js"></script>
+
 </body>
 </html>

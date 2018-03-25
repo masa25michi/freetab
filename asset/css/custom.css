@@ -14,6 +14,21 @@ body {
     text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
+
+i:focus {
+    color:red !important;
+}
+
+i:active {
+    color:cornflowerblue !important;
+}
+
+*:focus {
+    outline: none !important;
+    outline-style: none;
+    border: none;
+}
+
 .btn:link {
     text-decoration: none;
     color: #f5eafa;
@@ -41,8 +56,8 @@ h1 {
 .weather-box {
     position:fixed;
     top:2%;
-    right:0px;
-    text-align: left;
+    right:10px;
+    /*text-align: left;*/
     min-width:5%;
 }
 .weather-box > p {
@@ -68,9 +83,10 @@ h1 {
     position: fixed;
     bottom:4%;
     left:2%;
-    width:25%;
-    max-height:47%;
-    overflow: auto;
+    /*width:25%;*/
+
+
+    /*background-color: #09092a;*/
 }
 .quote-box
 {
@@ -127,6 +143,21 @@ ul {
     width:100%;
     padding-left: 0;
 }
+#show_count_down > ul > li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+#show_count_down > ul > li span {
+    display: block;
+    font-size: 4.5rem;
+}
+.datepicker, .datepicker:focus {
+    background-color:#09092a;
+    color:lightgrey;
+}
 
 #incomplete-tasks > li {
     width:100%;
@@ -138,7 +169,14 @@ ul {
     padding-bottom:5%;
     padding-top:5%;
 }
+#weather_header {
+    min-width:120px;
 
+}
+
+.weather_details {
+    text-align: center;
+}
 .popover{
     background-color: #09092a;
     min-width:26%;
@@ -151,6 +189,26 @@ ul {
     background-color: #09092a;
     min-width:12%;
     max-width: 15%;
+    border-width: 0px;
+    padding:1% 0% 0% 0%;
+    box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
+}
+
+.popover.news-popover{
+    position:fixed;
+    background-color: #09092a;
+    overflow: auto;
+    width:20%;
+    max-width: 30%;
+    border-width: 0px;
+    padding:1% 0% 0% 0%;
+    height:47%;
+}
+
+.popover.countdown-popover{
+    background-color: #09092a;
+    min-width:12%;
+    max-width: 30%;
     border-width: 0px;
     padding:1% 0% 0% 0%;
     box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
@@ -544,3 +602,58 @@ button:hover {
 a {
     cursor: pointer;
 }
+
+/* Reset Select */
+select {
+    /*-webkit-appearance: none;*/
+    /*-moz-appearance: none;*/
+    /*-ms-appearance: none;*/
+    /*appearance: none;*/
+    outline: 0;
+    box-shadow: none;
+    color: black;
+    cursor: pointer;
+    /*background: #2c3e50;*/
+}
+/* Custom Select */
+.select {
+    /*position: relative;*/
+    /*display: block;*/
+    /*width: 100%;*/
+    /*height: 40%;*/
+    /*line-height: 3;*/
+    /*background: #2c3e50;*/
+    /*overflow: hidden;*/
+    /*border-radius: .25em;*/
+}
+select {
+    /*width: 100%;*/
+    /*height: 40%;*/
+    /*margin: 0;*/
+    /*padding: 0 0 0 .5em;*/
+
+
+}
+select::-ms-expand {
+    /*display: none;*/
+}
+/* Arrow */
+select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    background: #34495e;
+    pointer-events: none;
+}
+/* Transition */
+/*.select:hover::after {*/
+    /*color: #f39c12;*/
+/*}*/
+/*.select::after {*/
+    /*-webkit-transition: .25s all ease;*/
+    /*-o-transition: .25s all ease;*/
+    /*transition: .25s all ease;*/
+/*}*/

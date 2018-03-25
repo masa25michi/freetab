@@ -1,3 +1,4 @@
+
 function getWeather() {
     var lat = 0;
     var long = 0;
@@ -29,9 +30,9 @@ function getWeather() {
                 {
                     tmp = tmp * 1.8 + 32;
                 }
-                html = '<h3 id="weather_header">'+Math.round(tmp)+' <span class="degree_default_text">'+degree_default+'</span></h3>';
-                html += '<p>'+data['name']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+data['weather'][0]['icon']+'.png" style="width:25%;height:25%;"> <br>';
-                html += 'Humidity: '+data['main']['humidity']+'%</p>';
+                html = '<h4 id="weather_header">'+Math.round(tmp)+' <span class="degree_default_text">'+degree_default+'</span></h4>';
+                html += '<div style="word-wrap: break-word; position:fixed;"><p class="weather_details" style="display:none;">'+data['name']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+data['weather'][0]['icon']+'.png" style="width:25%;height:25%;"> <br>';
+                html += 'Humidity: '+data['main']['humidity']+'%</p></div>';
                 //
                 var tempobject = {
                     'set': html,
@@ -43,9 +44,15 @@ function getWeather() {
                     'icon': data['weather'][0]['icon']
                 };
 
+
                 localStorage.setItem('weather', JSON.stringify(tempobject));
                 document.getElementById('weather').innerHTML = html;
 
+                $('#weather_header').hover(function(){
+                    $('.weather_details').fadeIn();
+                }, function() {
+                    $('.weather_details').fadeOut();
+                });
             }
         });
     }
@@ -73,9 +80,9 @@ function changeWeatherUnit(unit) {
                 temp = temp * 1.8 + 32;
             }
         }
-        html = '<h3 id="weather_header">'+Math.round(temp)+' <span class="degree_default_text">'+unit+'</span></h3>';
-        html += '<p>'+arr['name']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+arr['icon']+'.png" style="width:25%;height:25%;"> <br>';
-        html += 'Humidity: '+arr['humidity']+'%</p>';
+        html = '<h4 id="weather_header">'+Math.round(temp)+' <span class="degree_default_text">'+unit+'</span></h4>';
+        html += '<div style="word-wrap: break-word; position:fixed;"><p class="weather_details" style="display:none; ">'+arr['name']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+arr['icon']+'.png" style="width:25%;height:25%;"> <br>';
+        html += 'Humidity: '+arr['humidity']+'%</p></div>';
 
         var tempobject = {
             'set': html,
@@ -90,6 +97,12 @@ function changeWeatherUnit(unit) {
 
         localStorage.setItem('weather', JSON.stringify(tempobject));
         document.getElementById('weather').innerHTML = html;
+
+        $('#weather_header').hover(function(){
+            $('.weather_details').fadeIn();
+        }, function() {
+            $('.weather_details').fadeOut();
+        });
 
     } else {
         getWeather();

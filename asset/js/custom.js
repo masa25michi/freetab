@@ -5,6 +5,8 @@ var sPositions = localStorage.positions || "{}",
 var dateFormat = 0; //0-> with second 1-> no second
 var hourFormat = 0; //0-> 24-hour 1-> 12-hour
 
+var showNews = false;
+
 function start(){
 
     // chrome.downloads.download({
@@ -56,6 +58,7 @@ function initializeLocalStorage()
     var masatab_dateformat = localStorage.getItem("dateformat");
     var masatab_hourFormat = localStorage.getItem("hourformat");
     var masatab_degree_default = localStorage.getItem("degree_default");
+    var masatab_news_category = localStorage.getItem("news_category");
 
     if (masatab_weather != null) {
         var masatab_weather_arr = JSON.parse(masatab_weather);
@@ -189,6 +192,17 @@ function initializeLocalStorage()
         localStorage.setItem('select_weather_unit', JSON.stringify({ 'select_weather_unit': 'c' }));
     }
 
+    if (masatab_news_category != null) {
+
+        var masatab_news_category_arr = JSON.parse(masatab_news_category);
+        var category_tmp = masatab_news_category_arr['news_category'];
+        $("#select_news_category option:selected").removeAttr("selected");
+        $("#select_news_category option[value="+category_tmp+"]").attr('selected', 'selected');
+
+    } else {
+        localStorage.setItem('news_category', JSON.stringify({ 'news_category': 'technology' }));
+    }
+
     if (masatab_dateformat != null) {
         var masatab_dateformat_arr = JSON.parse(masatab_dateformat);
         dateformat_tmp = masatab_dateformat_arr['dateformat'];
@@ -251,6 +265,7 @@ function initialize()
         // '<h3 class="popover-title"></h3><div class="popover-content">'+$('#popover-setting-content').html()+'</div></div>',
         content: function() {
             $("[data-toggle=link_popover]").popover('hide');
+            $("[data-toggle=news_popover]").popover('hide');
             return $('#popover-setting-content').html();
         }
     });
@@ -261,9 +276,35 @@ function initialize()
         '<h3 class="popover-title"></h3><div class="popover-content">'+$('#popover-link-box').html()+'</div></div>',
         content: function() {
             $("[data-toggle=popover]").popover('hide');
+            $("[data-toggle=news_popover]").popover('hide');
             return $('#popover-link-box').html();
         }
     });
+
+    $("[data-toggle=news_popover]").popover({
+        html: true,
+        template: '<div class="popover news-popover">' +
+        '<h3 class="popover-title"></h3><div class="popover-content">'+$('#news_box_contents').html()+'</div></div>',
+        content: function() {
+            $("[data-toggle=popover]").popover('hide');
+            $("[data-toggle=link_popover]").popover('hide');
+            getNews();
+            // $('.news-popover > #news_box_contents').show();
+
+            return $('#news_box_contents').html();
+        }
+    });
+
+    // $("[data-toggle=countdown_popover]").popover({
+    //     html: true,
+    //     template: '<div class="popover countdown-popover"><div class="arrow"></div>' +
+    //     '<h3 class="popover-title"></h3><div class="popover-content">'+$('#popover-countdown-box').html()+'</div></div>',
+    //     content: function() {
+    //         $("[data-toggle=popover]").popover('hide');
+    //         $("[data-toggle=link_popover]").popover('hide');
+    //         return $('#popover-countdown-box').html();
+    //     }
+    // });
 
     initializeLocalStorage();
 
@@ -280,7 +321,7 @@ function initialize()
     getWeather();
 
     //news
-    getNews();
+    // getNews();
 
     //quote
     getQuote();
@@ -588,13 +629,12 @@ function setBackgroundImg()
         $('.background-img').html('<img src="/asset/img/background-morning.jpeg">');
         $('#time_content_greeting').find('span').text('Good Morning'+tmp_greeting_words);
     } else if (parseInt(hour)>=12 && parseInt(hour)<=17){
-        $('.background-img').html('<img src="/asset/img/background-noon.jpg">');
+        $('.background-img').html('<img src="/asset/img/background_test.jpg">');
         $('#time_content_greeting').find('span').text('Good Afternoon'+tmp_greeting_words);
     } else {
         $('.background-img').html('<img src="/asset/img/background-evening.jpg">');
         $('#time_content_greeting').find('span').text('Good Evening'+tmp_greeting_words);
     }
-
 
 }
 $(window).on("load", function() {

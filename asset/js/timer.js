@@ -9,6 +9,7 @@
 
     $('#stopwatch_icon').click(function(){
         $('#time_content').hide();
+        $('#count_div').hide();
         $('#timer_div').fadeIn('2000');
     });
 
@@ -51,6 +52,13 @@
 
     $('#timer_back_button').click(function(){
         $('#timer_div').hide();
+        $('#count_div').hide();
+        $('#time_content').fadeIn('2000');
+    });
+
+    $('.countdown_back_button').click(function(){
+        $('#timer_div').hide();
+        $('#count_div').hide();
         $('#time_content').fadeIn('2000');
     });
 
