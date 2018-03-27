@@ -41,6 +41,8 @@ function getNews ()
                     $('.news-list').append(newsitem(element['title'],element['description'], element['url']));
                 });
 
+                $('.news-list').append("<li style='font-size:95%; border:none; font-style:italic; '>Resources from <a href=\"https://newsapi.org/\" style=\"text-decoration: underline;\">NewsApi.org</a></li>");
+
                 var masatab_colortheme = localStorage.getItem('color_theme');
                 if(masatab_colortheme !=null){
                     var masatab_colortheme_arr = JSON.parse(masatab_colortheme);
@@ -55,5 +57,4 @@ function getNews ()
             }
         });
     }
-
 }

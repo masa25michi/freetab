@@ -2,21 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db3115a3-d0f0-4108-afbf-2fcf918292d0" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/asset/css/bootstrap-datetimepicker.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/asset/css/jquery.datetimepicker.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/asset/img/background_test.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/asset/js/bootstrap-datetimepicker.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/asset/js/countdown.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/asset/js/jquery.datetimepicker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/asset/js/moment.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/img/background_.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/img/background_morning.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/img/background_noon.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/img/background_shadow.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/img/loading_icon.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/js/moment-timezone-with-data-2012-2022.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/js/moment-timezone-with-data.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/asset/js/moment-timezone.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/asset/css/custom.css" afterPath="$PROJECT_DIR$/asset/css/custom.css" />
+      <change beforePath="$PROJECT_DIR$/asset/img/background-evening.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/asset/img/background-morning.jpeg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/asset/img/background-noon.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/asset/img/background_test.jpg" afterPath="$PROJECT_DIR$/asset/img/background_evening.jpg" />
       <change beforePath="$PROJECT_DIR$/asset/js/custom.js" afterPath="$PROJECT_DIR$/asset/js/custom.js" />
-      <change beforePath="$PROJECT_DIR$/asset/js/jquery-ui.js" afterPath="$PROJECT_DIR$/asset/js/jquery-ui.js" />
       <change beforePath="$PROJECT_DIR$/asset/js/news.js" afterPath="$PROJECT_DIR$/asset/js/news.js" />
-      <change beforePath="$PROJECT_DIR$/asset/js/setting.js" afterPath="$PROJECT_DIR$/asset/js/setting.js" />
-      <change beforePath="$PROJECT_DIR$/asset/js/timer.js" afterPath="$PROJECT_DIR$/asset/js/timer.js" />
-      <change beforePath="$PROJECT_DIR$/asset/js/weather.js" afterPath="$PROJECT_DIR$/asset/js/weather.js" />
       <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
     </list>
@@ -34,12 +35,55 @@
     <favorites_list name="freetab" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="665" column="0" lean-forward="true" selection-start-line="665" selection-start-column="0" selection-end-line="665" selection-end-column="0" />
+              <folding>
+                <marker date="1522161184972" expanded="true" signature="19320:19326" ph=" " />
+                <marker date="1522161184972" expanded="true" signature="19326:19332" ph=" " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/css/custom.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="593" column="0" lean-forward="false" selection-start-line="593" selection-start-column="0" selection-end-line="593" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#label#0;n#div#0;n#header#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#3;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#4;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#a#5;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#form#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manifest.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            <state relative-caret-position="150">
+              <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -56,36 +100,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>date</find>
-      <find>calen</find>
-      <find>pop</find>
-      <find>count</find>
-      <find>time_content</find>
-      <find>time_con</find>
-      <find>datepicker</find>
-      <find>countdown_edit_button</find>
-      <find>back</find>
-      <find>timer_back_button</find>
-      <find>setItem</find>
-      <find>set</find>
-      <find>count_div</find>
-      <find>select_count_down</find>
-      <find>show_count_down</find>
-      <find>weather_header</find>
-      <find>weather_det</find>
-      <find>jpe</find>
-      <find>news-</find>
-      <find>news-box</find>
-      <find>getN</find>
-      <find>getNews</find>
-      <find>news-list</find>
+      <find>searc</find>
+      <find>todo</find>
+      <find>new-task</find>
+      <find>link</find>
+      <find>fa-search</find>
+      <find>Tokyo</find>
+      <find>Shanghai</find>
+      <find>london</find>
+      <find>tokyo</find>
+      <find>news-popover</find>
       <find>popover</find>
-      <find>weather</find>
-      <find>technolo</find>
-      <find>border</find>
-      <find>news</find>
-      <find>attr</find>
-      <find>attr('selec</find>
+      <find>tokyo_world_time</find>
+      <find>wor</find>
+      <find>world_time_box</find>
+      <find>city_world_time</find>
+      <find>time_content</find>
+      <find>h1</find>
+      <find>h</find>
+      <find>jpe</find>
+      <find>jpg</find>
+      <find>world</find>
+      <find>search</find>
+      <find>setItem</find>
+      <find>getItem</find>
+      <find>background</find>
+      <find>5000</find>
+      <find>background-img</find>
+      <find>i {</find>
+      <find>time</find>
+      <find>jp</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/asset/js</dir>
@@ -114,13 +158,16 @@
         <option value="$PROJECT_DIR$/asset/js/jquery-ui.js" />
         <option value="$PROJECT_DIR$/asset/js/timer.js" />
         <option value="$PROJECT_DIR$/asset/js/countdown.js" />
-        <option value="$PROJECT_DIR$/asset/js/news.js" />
         <option value="$PROJECT_DIR$/asset/js/weather.js" />
         <option value="$PROJECT_DIR$/asset/js/setting.js" />
-        <option value="$PROJECT_DIR$/asset/js/custom.js" />
+        <option value="$PROJECT_DIR$/asset/js/news.js" />
+        <option value="$PROJECT_DIR$/asset/js/moment-timezone.js" />
+        <option value="$PROJECT_DIR$/asset/js/moment-timezone-with-data.js" />
+        <option value="$PROJECT_DIR$/asset/js/moment-timezone-with-data-2012-2022.js" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/asset/css/custom.css" />
         <option value="$PROJECT_DIR$/manifest.json" />
+        <option value="$PROJECT_DIR$/asset/css/custom.css" />
+        <option value="$PROJECT_DIR$/asset/js/custom.js" />
       </list>
     </option>
   </component>
@@ -135,9 +182,11 @@
       <scroll-view-position x="0" y="0" />
     </layout>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="44" />
+    <option name="y" value="23" />
+    <option name="width" value="1396" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -292,26 +341,32 @@
       <workItem from="1521877729619" duration="3886000" />
       <workItem from="1521973036479" duration="402000" />
       <workItem from="1521979347348" duration="319000" />
-      <workItem from="1521982211419" duration="845000" />
+      <workItem from="1521982211419" duration="1138000" />
+      <workItem from="1522026854776" duration="4414000" />
+      <workItem from="1522048594157" duration="1821000" />
+      <workItem from="1522075016020" duration="2960000" />
+      <workItem from="1522120743642" duration="2131000" />
+      <workItem from="1522133888806" duration="7210000" />
+      <workItem from="1522160469436" duration="638000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123884000" />
+    <option name="totallyTimeSpent" value="143351000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="44" y="23" width="1396" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23194444" sideWeight="0.4941691" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23137535" sideWeight="0.48447204" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2647059" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24027778" sideWeight="0.5058309" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26459628" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23137535" sideWeight="0.51552796" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -354,47 +409,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/style3.css" />
-    <entry file="file://$PROJECT_DIR$/asset/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="916" lean-forward="true" selection-start-line="5" selection-start-column="916" selection-end-line="5" selection-end-column="916" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="5" column="3760" lean-forward="false" selection-start-line="5" selection-start-column="3760" selection-end-line="5" selection-end-column="3760" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/popper.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/fontawesome.min.css" />
-    <entry file="file://$PROJECT_DIR$/asset/css/bootstrap2-toggle.min.css" />
-    <entry file="file://$PROJECT_DIR$/asset/js/bootstrap-toggle.min.js" />
-    <entry file="file://$PROJECT_DIR$/asset/js/jquery-3.2.1.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4965">
-          <caret line="2" column="18477" lean-forward="false" selection-start-line="2" selection-start-column="18477" selection-end-line="2" selection-end-column="18477" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/img/back1.JPG" />
-    <entry file="file://$PROJECT_DIR$/asset/img/note_image.png" />
     <entry file="file://$PROJECT_DIR$/asset/img/icon.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -410,11 +424,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/img/background-evening.jpeg" />
     <entry file="file://$PROJECT_DIR$/asset/img/background-noon.jpeg" />
-    <entry file="file://$PROJECT_DIR$/asset/img/background-morning.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/reallySimpleWeather.js" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
@@ -427,13 +436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="1307" column="31" lean-forward="true" selection-start-line="1307" selection-start-column="31" selection-end-line="1307" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="512" column="9" lean-forward="false" selection-start-line="512" selection-start-column="9" selection-end-line="512" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -451,11 +453,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/img/background-evening.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/background-evening.jpg" />
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/phrase.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -537,13 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/moment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="773">
-          <caret line="4505" column="5" lean-forward="false" selection-start-line="4505" selection-start-column="5" selection-end-line="4505" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/timer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -565,6 +556,92 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/eclipse.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/setting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/loading_icon.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/css/fontawesome-all.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="4" column="1884" lean-forward="false" selection-start-line="4" selection-start-column="1884" selection-end-line="4" selection-end-column="1884" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/news.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="50" column="22" lean-forward="true" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+          <folding>
+            <marker date="1522037823897" expanded="true" signature="1295:1342" ph="..." />
+            <marker date="1522037823897" expanded="true" signature="1400:1427" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/moment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4131">
+          <caret line="4505" column="5" lean-forward="false" selection-start-line="4505" selection-start-column="5" selection-end-line="4505" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/moment-timezone.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="604" column="4" lean-forward="false" selection-start-line="604" selection-start-column="4" selection-end-line="604" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/moment-timezone-with-data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="1203" column="4" lean-forward="false" selection-start-line="1203" selection-start-column="4" selection-end-line="1203" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/moment-timezone-with-data-2012-2022.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="724" column="27" lean-forward="false" selection-start-line="724" selection-start-column="27" selection-end-line="724" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/jquery.datetimepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/background_evening.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/background-morning.jpeg" />
+    <entry file="file://$PROJECT_DIR$/asset/img/background_shadow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/img/background_morning.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/countdown.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -572,57 +649,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/fontawesome-all.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="4" column="1884" lean-forward="false" selection-start-line="4" selection-start-column="1884" selection-end-line="4" selection-end-column="1884" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/img/eclipse.gif">
+    <entry file="file://$PROJECT_DIR$/asset/img/background_.jpg" />
+    <entry file="file://$PROJECT_DIR$/asset/img/background_.jpeg">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/custom.css">
+    <entry file="file://$PROJECT_DIR$/asset/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="69" column="16" lean-forward="true" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
+        <state relative-caret-position="303">
+          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
-            <element signature="n#style#0;n#i#0;n#a#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1520318287406" expanded="true" signature="16730:16736" ph=" " />
+            <marker date="1520318287406" expanded="true" signature="16736:16742" ph=" " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/setting.js">
+    <entry file="file://$PROJECT_DIR$/asset/js/readimages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/news.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="72" lean-forward="false" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="72" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/js/weather.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        <state relative-caret-position="-216">
+          <caret line="54" column="19" lean-forward="true" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
           <folding>
             <marker date="1521982465704" expanded="true" signature="1128:1166" ph="..." />
             <marker date="1521982465704" expanded="true" signature="1202:1215" ph="..." />
@@ -636,22 +690,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
+    <entry file="file://$PROJECT_DIR$/manifest.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="193" column="0" lean-forward="true" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <marker date="1521982699954" expanded="true" signature="17908:17914" ph=" " />
-            <marker date="1521982699954" expanded="true" signature="17914:17920" ph=" " />
+            <element signature="n#style#0;n#label#0;n#div#0;n#header#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#1;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#2;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#3;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#4;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#a#5;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#form#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#main#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
+    <entry file="file://$PROJECT_DIR$/asset/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="529">
+          <caret line="593" column="0" lean-forward="false" selection-start-line="593" selection-start-column="0" selection-end-line="593" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="665" column="0" lean-forward="true" selection-start-line="665" selection-start-column="0" selection-end-line="665" selection-end-column="0" />
+          <folding>
+            <marker date="1522161184972" expanded="true" signature="19320:19326" ph=" " />
+            <marker date="1522161184972" expanded="true" signature="19326:19332" ph=" " />
+          </folding>
         </state>
       </provider>
     </entry>

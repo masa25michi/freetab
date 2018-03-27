@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freetab</title>
+    <title>New Tab</title>
     <link rel="shortcut icon" type="image/png" href="asset/img/icon-16.png"/>
 
     <!-- Bootstrap core CSS -->
@@ -17,62 +17,90 @@
     <link href="/asset/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="asset/font/weather-icons/css/weather-icons.min.css" rel="stylesheet">
     <link href="/asset/css/custom.css" rel="stylesheet">
-
-    <style>
-
-    </style>
 </head>
 
 <body class="text-center">
-        <!--<video autoplay="autoplay" loop>-->
-            <!--<source src='/asset/background-video.mp4' type='video/mp4' />-->
-        <!--</video>-->
-    <div class="background-img" style="display:none;"></div>
+    <div id ="background_id" class="background-img">
+        <img  id="image_id">
+    </div>
+    <div id="background_shadow" style="display:none;"></div>
+
 
     <div id="freetab_main" class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto" style="max-width:100%;overflow-wrap: break-word; font-size: 80%; min-height:90px;">
             <div class="quote-box">
-                <label id='quote-text' class="text-align-top text-align-center" style="max-width:550px; overflow-wrap: break-word;">
+                <label id='quote-text' class="text-align-top text-align-center" style="max-width:400px; overflow-wrap: break-word;">
                 </label>
             </div>
-
         </header>
 
         <div class="weather-box" style="">
-            <p id = 'weather'>Loading...</p>
+            <p id = 'weather'><img src="asset/img/loading_icon.svg" width="30px" height="30px"></p>
         </div>
 
         <div class="setting-box" style="">
             <a tabindex="0" class="btn "id="setting_icon"  data-container="body" data-toggle="popover" data-placement="bottom" >
-                <i class="fas fa-wrench" style="color:darkgrey"></i>
+                <i class="fas fa-wrench" style="color:white"></i>
             </a>
 
             <a tabindex="0" class="btn" id="stopwatch_icon">
-                <i class="fas fa-stopwatch" style="color:darkgrey"></i>
+                <i class="fas fa-stopwatch" style="color:white"></i>
             </a>
 
             <a tabindex="0" class="btn" id="link_icon" data-toggle="link_popover" data-placement="bottom">
-                <i class="fas fa-link" style="color:darkgrey"></i>
+                <i class="fas fa-link" style="color:white"></i>
             </a>
 
             <a tabindex="0" class="btn" id="time_date_icon" style="display:none;">
-                <i class="fas fa-clock" style="color:darkgrey"></i>
+                <i class="fas fa-clock" style="color:white"></i>
             </a>
 
             <a tabindex="0" class="btn" id="calendar_countdown_icon" data-toggle="countdown_popover" data-placement="bottom" >
-                <i class="fas fa-calendar-check" style="color:darkgrey"></i>
+                <i class="fas fa-calendar-check" style="color:white"></i>
             </a>
+
+            <a tabindex="0" class="btn" id="world_time_icon" data-toggle="world_time_popover" data-placement="bottom" >
+                <i class="fas fa-globe" style="color:white"></i>
+            </a>
+
+            <form action="https://google.com/search" method="get" class="search_form">
+                <i class="fas fa-search" style="color:white"></i>
+                <input name = "q" value = "" type="text" class="form-control search" >
+            </form>
+
+        </div>
+
+        <div id="world_time_box" style="display:none">
+            <table>
+                <tr class="city_world_tr"><td><h6><i class="fas fa-globe" style="color:darkgrey"></i> World Clock</h6></td><td><br></td></tr>
+                <tr class="city_world_tr">
+                    <td class="city_world_name"><h4>Tokyo</h4><p>Japan</p></td> <td id="tokyo_world_time" class="city_world_time"></td>
+                </tr>
+
+                <tr class="city_world_tr">
+                    <td class="city_world_name"><h4>Shanghai</h4><p>China</p></td> <td id="shanghai_world_time" class="city_world_time"></td>
+                </tr>
+
+                <tr class="city_world_tr">
+                    <td class="city_world_name"><h4>New York</h4> <p>USA</p></td> <td id="newyork_world_time" class="city_world_time"></td>
+                </tr>
+
+                <tr class="city_world_tr">
+                    <td class="city_world_name"><h4>London</h4> <p>England</p></td> <td id="london_world_time" class="city_world_time"></td>
+                </tr>
+            </table>
         </div>
 
         <div class="news-box" style="display: none;">
             <a tabindex="0" class="btn" id="news_box_icon" data-toggle="news_popover" data-placement="bottom" >
-                <i class="fas fa-newspaper" style="color:darkgrey; font-size:120%;"></i>
+                <i class="fas fa-newspaper" style="color:white; font-size:120%;"></i>
             </a>
 
             <div id="news_box_contents" style="display: none;">
+
                 <ul class="news-list">
+                    <li style="border:none;"><img id="news_loading_icon" src="asset/img/loading_icon.svg" width="50px" height="50px"></li>
                 </ul>
-                <small>Resources from <a href="https://newsapi.org/" style="text-decoration: underline;">NewsApi.org</a></small>
             </div>
         </div>
 
@@ -87,7 +115,7 @@
                     <tr>
                         <td style="width:10%;">
                             <form id="new-task-input-form" style="display:none;">
-                                <input id="new-task" type="text" placeholder="Add Item" class="form-control todo" >
+                                <input id="new-task" type="text"  class="form-control todo" >
                             </form>
                         </td>
                     </tr>
@@ -98,17 +126,11 @@
             </div>
         </div>
 
-        <main role="main" class="inner cover" style="min-width:550px; margin-bottom:15%;">
-            <div id="time_content">
+        <main role="main" class="inner cover" style="min-width:700px; margin-bottom:10%;">
+            <div id="time_content" style="display:none;">
                 <h4 id="time_content_greeting" style="min-height:30px;"><span style="display:none;">Good Morning</span></h4>
                 <h1 id="time" style="min-height:150px;"></h1>
                 <h3 id = 'displaydate' style="height:50px;"></h3>
-
-                <br><br>
-                <form action="https://google.com/search" method="get" style="min-height:30px; display:none;" class="search_form">
-                    <i class="fas fa-search"></i>
-                    <input name = "q" value = "" type="text" class="form-control search" placeholder="Google Search">
-                </form>
             </div>
 
             <div id ='timer_div' style="color:white; display:none;">
@@ -352,6 +374,9 @@
     <script src="/asset/js/popper.min.js"></script>
     <script src="/asset/js/bootstrap.min.js"></script>
     <script src="/asset/js/moment.js"></script>
+    <!--<script src="/asset/js/moment-timezone-with-data.js"></script>-->
+    <script src="/asset/js/moment-timezone-with-data-2012-2022.js"></script>
+    <!--<script src="/asset/js/moment-timezone.js"></script>-->
     <script src="/asset/js/bootstrap-datetimepicker.min.js"></script>
     <script src="/asset/js/custom.js"></script>
     <script src="/asset/js/todo.js"></script>

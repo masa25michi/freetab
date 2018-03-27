@@ -13,10 +13,10 @@ function start(){
     //     url: "https://static.pexels.com/photos/916044/pexels-photo-916044.jpeg",
     //     filename: "/asset/img/test.jpeg" // Optional
     // });
-
+    updateWorldClock();
     window.setTimeout(function(){
         initialize();
-    },300);
+    },500);
 
 }
 
@@ -25,6 +25,20 @@ function colortheme_event(e){
     changecolortheme(color);
 
     localStorage.setItem('color_theme', JSON.stringify({'color':color}));
+}
+
+function updateWorldClock() {
+    date = new Date();
+    var newYork    = moment.tz(date, "America/New_York").format("HH:mm");
+    var tokyo    = moment.tz(date, "Asia/Tokyo").format(" HH:mm");
+    var shanghai    = moment.tz(date, "Asia/Shanghai").format(" HH:mm");
+    var london    = moment.tz(date, "Europe/London").format(" HH:mm");
+
+    $('#newyork_world_time').text(newYork);
+    $('#shanghai_world_time').text(shanghai);
+    $('#tokyo_world_time').text(tokyo);
+    $('#london_world_time').text(london);
+
 }
 
 function changecolortheme(color){
@@ -266,6 +280,7 @@ function initialize()
         content: function() {
             $("[data-toggle=link_popover]").popover('hide');
             $("[data-toggle=news_popover]").popover('hide');
+            $("[data-toggle=world_time_popover]").popover('hide');
             return $('#popover-setting-content').html();
         }
     });
@@ -277,6 +292,7 @@ function initialize()
         content: function() {
             $("[data-toggle=popover]").popover('hide');
             $("[data-toggle=news_popover]").popover('hide');
+            $("[data-toggle=world_time_popover]").popover('hide');
             return $('#popover-link-box').html();
         }
     });
@@ -288,10 +304,25 @@ function initialize()
         content: function() {
             $("[data-toggle=popover]").popover('hide');
             $("[data-toggle=link_popover]").popover('hide');
+            $("[data-toggle=world_time_popover]").popover('hide');
             getNews();
+
             // $('.news-popover > #news_box_contents').show();
 
             return $('#news_box_contents').html();
+        }
+    });
+
+    $("[data-toggle=world_time_popover]").popover({
+        html: true,
+        template: '<div class="popover world-popover"><div class="arrow"></div>' +
+        '<h3 class="popover-title"></h3><div class="popover-content">'+$('#world_time_box').html()+'</div></div>',
+        content: function() {
+            $("[data-toggle=popover]").popover('hide');
+            $("[data-toggle=link_popover]").popover('hide');
+            $("[data-toggle=news_popover]").popover('hide');
+
+            return $('#world_time_box').html();
         }
     });
 
@@ -345,7 +376,6 @@ function initialize()
                 // loadWeather(arr['lat']+','+arr['long']);
             }, {
                 enableHighAccuracy: true
-                ,timeout : 5000
             }
         );
     }
@@ -365,9 +395,18 @@ function initialize()
         $("#time").html(time);
     }, 1000);
 
+    $('#time_content').fadeIn('2500');
+
     window.setTimeout(function(){
         $('#time_content_greeting').find('span').hide().fadeIn('8000');
     },1500);
+
+
+    window.setInterval(function(){
+        updateWorldClock();
+    },10000);
+
+
 
     $('body').on('click','.link-box-item',function () {
         id = $(this).attr('id');
@@ -460,6 +499,8 @@ function initialize()
         e.preventDefault();
     });
 
+
+    $('#background_shadow').show();
 }
 
 function getTime(){
@@ -615,7 +656,11 @@ function setBackgroundImg()
 {
     //set background
     var dt = new Date();
-    var hour = dt.getHours();
+    var date = dt.getDate();
+
+    $('.background-img > img').css('background-image', 'url("https://s3-ap-northeast-1.amazonaws.com/freetab/img/'+date+'.jpeg")');
+
+    //get username
     var masatab_user_name = localStorage.getItem("user_name");
     var tmp_greeting_words ='';
 
@@ -625,18 +670,10 @@ function setBackgroundImg()
         tmp_greeting_words = ', '+masatab_user_name_arr['user_name'];
     }
 
-    if(parseInt(hour)>=6 && parseInt(hour)<=11){
-        $('.background-img').html('<img src="/asset/img/background-morning.jpeg">');
-        $('#time_content_greeting').find('span').text('Good Morning'+tmp_greeting_words);
-    } else if (parseInt(hour)>=12 && parseInt(hour)<=17){
-        $('.background-img').html('<img src="/asset/img/background_test.jpg">');
-        $('#time_content_greeting').find('span').text('Good Afternoon'+tmp_greeting_words);
-    } else {
-        $('.background-img').html('<img src="/asset/img/background-evening.jpg">');
-        $('#time_content_greeting').find('span').text('Good Evening'+tmp_greeting_words);
-    }
+    $('#time_content_greeting').find('span').text('Good Evening'+tmp_greeting_words);
 
 }
+
 $(window).on("load", function() {
     $('#freetab_main').hide();
     $('.ackground-img').hide();
@@ -645,5 +682,8 @@ $(window).on("load", function() {
     $('.background-img').fadeIn('2000');
     start();
     $('#freetab_main').fadeIn('3000');
+
+
+    // Take action when the image has loaded
 
 });
