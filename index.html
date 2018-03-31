@@ -71,7 +71,7 @@
 
         <div id="world_time_box" style="display:none">
             <table>
-                <tr class="city_world_tr"><td><h6><i class="fas fa-globe" style="color:darkgrey"></i> World Clock</h6></td><td><br></td></tr>
+                <tr class="city_world_tr"><td><i class="fas fa-globe" style="color:darkgrey"></i> World Clock</td><td><br></td></tr>
                 <tr class="city_world_tr">
                     <td class="city_world_name"><h4>Tokyo</h4><p>Japan</p></td> <td id="tokyo_world_time" class="city_world_time"></td>
                 </tr>
@@ -83,10 +83,23 @@
                 <tr class="city_world_tr">
                     <td class="city_world_name"><h4>New York</h4> <p>USA</p></td> <td id="newyork_world_time" class="city_world_time"></td>
                 </tr>
-
                 <tr class="city_world_tr">
                     <td class="city_world_name"><h4>London</h4> <p>England</p></td> <td id="london_world_time" class="city_world_time"></td>
                 </tr>
+
+                <tr class="city_world_tr">
+                    <td class="city_world_name"><h4>Sydney</h4> <p>Australia</p></td> <td id="sydney_world_time" class="city_world_time"></td>
+                </tr>
+
+                <tr class="city_world_tr">
+                    <td class="city_world_name"><h4>Berlin</h4> <p>Germany</p></td> <td id="berlin_world_time" class="city_world_time"></td>
+                </tr>
+
+                <tr class="city_world_tr">
+                    <td class="city_world_name"><h4>Rome</h4> <p>Italy</p></td> <td id="rome_world_time" class="city_world_time"></td>
+                </tr>
+
+
             </table>
         </div>
 
@@ -127,7 +140,7 @@
 
         <main role="main" class="inner cover" style="min-width:700px; margin-bottom:10%;">
             <div id="time_content" style="display:none;">
-                <h4 id="time_content_greeting" style="min-height:30px;"><span style="display:none;">Good Morning</span></h4>
+                <h3 id="time_content_greeting"><span style="display:none;">Good Morning</span></h3>
                 <h1 id="time" style="min-height:150px;"></h1>
                 <div style="height:50px;">
                     <h3 id = 'displaydate' ></h3>
@@ -370,7 +383,7 @@
         </div>
 
         <div class="user-profile">
-            <p><span class="greeting_in_user_profile"></span>, <span class="user_name"></span></p>
+
         </div>
         <div class="new-user-register">
             <p>Hi! What can I call you?</p>

@@ -44,11 +44,17 @@ function updateWorldClock() {
     var tokyo    = moment.tz(date, "Asia/Tokyo").format(" HH:mm");
     var shanghai    = moment.tz(date, "Asia/Shanghai").format(" HH:mm");
     var london    = moment.tz(date, "Europe/London").format(" HH:mm");
+    var berlin    = moment.tz(date, "Europe/Berlin").format(" HH:mm");
+    var sydney    = moment.tz(date, "Australia/Sydney").format(" HH:mm");
+    var rome    = moment.tz(date, "Europe/Rome").format(" HH:mm");
 
     $('#newyork_world_time').text(newYork);
     $('#shanghai_world_time').text(shanghai);
     $('#tokyo_world_time').text(tokyo);
     $('#london_world_time').text(london);
+    $('#sydney_world_time').text(sydney);
+    $('#berlin_world_time').text(berlin);
+    $('#rome_world_time').text(rome);
 
 }
 
@@ -567,9 +573,8 @@ function initialize()
         } else {
             greeting_words = 'Good Evening'
         }
-
-        $('.greeting_in_user_profile').text(greeting_words);
-        $('.user_name').text(user_name);
+        // $('.greeting_in_user_profile').text(greeting_words);
+        $('.user-profile').html('<form id="form-register-input"><label>'+greeting_words+'</label><input id="register_name" type="text" value="'+user_name+'" name="register_name" class=" register-input" ></form>');
         $('.user-profile').show('slow');
         e.preventDefault();
     });
@@ -733,7 +738,6 @@ function setBackgroundImg()
     //set background
     var dt = new Date();
     var date = dt.getDate();
-
     var img_url = 'https://s3-ap-northeast-1.amazonaws.com/freetab/img/'+date+'.jpeg';
 
     $.ajax({

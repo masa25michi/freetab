@@ -32,8 +32,7 @@ $(function(){
                     greeting_words = 'Good Evening'
                 }
 
-                $('.greeting_in_user_profile').text(greeting_words);
-                $('.user_name').text(masatab_user_name_arr['user_name']);
+                $('.user-profile').html('<form id="form-register-input"><label>'+greeting_words+'</label><input id="register_name" type="text" value="'+masatab_user_name_arr['user_name']+'" name="register_name" class=" register-input" ></form>');
                 $('.user-profile').show();
             }
         } else if(id === 'contact_tab') {

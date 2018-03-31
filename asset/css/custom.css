@@ -48,7 +48,7 @@ video {
 }
 
 h1 {
-    font-size:900%;
+    font-size:950%;
     /*text-shadow: 1px 1px black;*/
     padding:0px;
     margin:0px;
@@ -147,7 +147,8 @@ h1 {
 
 #time_content_greeting {
     font-style: italic;
-    min-height: 30px;
+    min-height: 35px;
+    /*font-size:120%;*/
 
 }
 #time_content_greeting > span {
@@ -224,11 +225,11 @@ ul {
 .popover.world-popover{
     /*position:fixed;*/
     background-color: black;
-    /*overflow: auto;*/
+    overflow: auto;
     min-width:250px;
     border-width: 0px;
-    padding:2% 1% 2% 1%;
-    /*height:15%;*/
+    padding:1% 1% 1% 1%;
+    height:400px;
 }
 
 .popover.countdown-popover{
@@ -241,23 +242,31 @@ ul {
 }
 
 .city_world_name {
-    padding-top:10px;
+    padding-top:5px;
 }
 
 .city_world_name > p {
-    font-family: "Courier New", Courier, monospace;
+    /*font-family: "Courier New", Courier, monospace;*/
 }
 
 .city_world_tr {
     border-bottom: 1px grey solid;
+    /*border:1px red solid;*/
+    height:30px;
+
     /*font-family: "Courier New", Courier, monospace;*/
+
+}
+.city_world_tr > h6, .city_world_tr > i {
+    padding:0px;
+    margin:0px;
 }
 
 .city_world_time {
-    font-size:30px;
+    font-size:28px;
     text-align: right;
     /*border:1px red solid;*/
-    min-width:300px;
+    width:220px;
     padding-bottom: 5px;
     padding-top: 10px;
     font-family: "Courier New", Courier, monospace;
@@ -450,18 +459,22 @@ input:checked + .slider:before {
 .register-input {
     /*box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);*/
     background: transparent;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     color:white;
-    width:100%;
+    /*width:100%;*/
+    width:200px;
     border:none;
-    border-bottom:1px solid grey;
+    padding-left:10px;
+    /*border-bottom:2px solid grey;*/
     /*text-align: center;*/
+}
+
+#form-register-input > label {
+    float:left;
 }
 
 .register-input:focus {
     background: transparent;
-    border-radius: 10px;
-
     color:white;
     border:none;
     outline:none !important;
