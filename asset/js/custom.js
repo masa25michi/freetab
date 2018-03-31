@@ -7,12 +7,23 @@ var hourFormat = 0; //0-> 24-hour 1-> 12-hour
 
 var showNews = false;
 
+
 function start(){
 
     // chrome.downloads.download({
     //     url: "https://static.pexels.com/photos/916044/pexels-photo-916044.jpeg",
     //     filename: "/asset/img/test.jpeg" // Optional
     // });
+
+    $('body').on('click', function (e) {
+        $('.setting-icon').each(function () {
+            if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+                $(this).popover('hide');
+            }
+        });
+    });
+
+
     updateWorldClock();
     window.setTimeout(function(){
         initialize();
@@ -73,6 +84,8 @@ function initializeLocalStorage()
     var masatab_hourFormat = localStorage.getItem("hourformat");
     var masatab_degree_default = localStorage.getItem("degree_default");
     var masatab_news_category = localStorage.getItem("news_category");
+    var masatab_show_world_time = localStorage.getItem("show_world_time");
+    var masatab_show_calendar_countdown_time = localStorage.getItem("show_calendar_countdown_time");
 
     if (masatab_weather != null) {
         var masatab_weather_arr = JSON.parse(masatab_weather);
@@ -84,6 +97,36 @@ function initializeLocalStorage()
             temp = masatab_weather_arr['temp_f'];
         }
         $('#weather_header').text(temp);
+    }
+
+    if (masatab_show_world_time != null) {
+        var masatab_show_world_time_arr = JSON.parse(masatab_show_world_time);
+        if(masatab_show_world_time_arr['set'] === true){
+            $("#world_time_icon").show();
+            $('#world_time_button').attr('checked',true);
+
+        }else{
+            $("#world_time_icon").hide();
+            $('#world_time_button').attr('checked',false);
+        }
+    }else{
+        settingGeneral("#world_time_icon", "show_world_time", {'display':'block'}, {});
+        $('#world_time_button').prop('checked', true);
+    }
+
+    if (masatab_show_calendar_countdown_time != null) {
+        var masatab_show_calendar_countdown_time_arr = JSON.parse(masatab_show_calendar_countdown_time);
+        if(masatab_show_calendar_countdown_time_arr['set'] === true){
+            $("#calendar_countdown_icon").show();
+            $('#calendar_countdown_button').attr('checked',true);
+
+        }else{
+            $("#calendar_countdown_icon").hide();
+            $('#calendar_countdown_button').attr('checked',false);
+        }
+    }else{
+        settingGeneral("#calendar_countdown_icon", "show_calendar_countdown_time", {'display':'block'}, {});
+        $('#calendar_countdown_button').prop('checked', true);
     }
 
     if (masatab_date != null) {
@@ -342,10 +385,38 @@ function initialize()
     //date
     var d = new Date();
     var month = d.getMonth()+1;
-    var day = d.getDate();
-    var output = d.getFullYear() + '/' +
+    var date = d.getDate();
+    var day = d.getDay();
+
+    var output = '<small>'+d.getFullYear() + '/' +
         (month<10 ? '0' : '') + month + '/' +
-        (day<10 ? '0' : '') + day;
+        (date<10 ? '0' : '') + date;
+
+    switch(day) {
+        case 0:
+            output += '&nbsp;&nbsp;&nbsp;Sunday  </small>';
+            break;
+        case 1:
+            output += '&nbsp;&nbsp;&nbsp;Monday</small>';
+            break;
+        case 2:
+            output += '&nbsp;&nbsp;&nbsp;Tuesday</small>';
+            break;
+        case 3:
+            output += '&nbsp;&nbsp;&nbsp;Wednesday</small>';
+            break;
+        case 4:
+            output += '&nbsp;&nbsp;&nbsp;Thursday</small>';
+            break;
+        case 5:
+            output += '&nbsp;&nbsp;&nbsp;Friday</small>';
+            break;
+        case 6:
+            output += '&nbsp;&nbsp;&nbsp;Saturday</small>';
+            break;
+        default:
+            break;
+    }
     $('#displaydate').html(output);
 
     //weather
@@ -447,6 +518,10 @@ function initialize()
             settingGeneral('.todo-box','show_todo', {'display':'block'},{'display':'none'});
         } else if(id === 'quote_button' ) {
             settingGeneral('.quote-box','show_quote', {'display':'block'},{'display':'none'});
+        } else if(id === 'world_time_button' ) {
+            settingGeneral('#world_time_icon','show_world_time', {'display':'block'},{'display':'none'});
+        } else if(id === 'calendar_countdown_button' ) {
+            settingGeneral('#calendar_countdown_icon','show_calendar_countdown_time', {'display':'block'},{'display':'none'});
         }
         if(this.checked ) {
             $('#'+id).attr('checked', true);
@@ -639,14 +714,15 @@ function loadWeather(location, woeid) {
 function settingGeneral(display_element, localstorage_element, css_active, css_disactive){
     var localStorage_temp = localStorage.getItem(localstorage_element);
     if ( localStorage_temp === null) {
-        $(display_element).css(css_active);
+        // $(display_element).css(css_active);
+        $(display_element).fadeIn();
         localStorage.setItem(localstorage_element, JSON.stringify({ 'set': true }));
     }else{
         if(JSON.parse(localStorage_temp)['set']==true){
-            $(display_element).css(css_disactive);
+            $(display_element).fadeOut();
             localStorage.setItem(localstorage_element, JSON.stringify({ 'set': false }));
         }else{
-            $(display_element).css(css_active);
+            $(display_element).fadeIn();
             localStorage.setItem(localstorage_element, JSON.stringify({ 'set': true }));
         }
     }
@@ -658,7 +734,28 @@ function setBackgroundImg()
     var dt = new Date();
     var date = dt.getDate();
 
-    $('.background-img > img').css('background-image', 'url("https://s3-ap-northeast-1.amazonaws.com/freetab/img/'+date+'.jpeg")');
+    var img_url = 'https://s3-ap-northeast-1.amazonaws.com/freetab/img/'+date+'.jpeg';
+
+    $.ajax({
+        url:img_url,
+        type:'HEAD',
+        error: function(){
+            //do something depressing
+            $('.background-img > img').css('background-image', 'url("/asset/img/background.jpeg")');
+        },
+        success: function(e){
+            $('.background-img > img').css('background-image', 'url("'+img_url+'")');
+            //do something cheerful :)
+        }
+    });
+
+
+}
+
+function setGreetingName()
+{
+    var dt = new Date();
+    var hour = dt.getHours();
 
     //get username
     var masatab_user_name = localStorage.getItem("user_name");
@@ -670,20 +767,18 @@ function setBackgroundImg()
         tmp_greeting_words = ', '+masatab_user_name_arr['user_name'];
     }
 
-    $('#time_content_greeting').find('span').text('Good Evening'+tmp_greeting_words);
-
+    if (hour >=6 && hour <12) {
+        $('#time_content_greeting').find('span').text('Good Morning'+tmp_greeting_words);
+    } else if (hour >=12 && hour <18) {
+        $('#time_content_greeting').find('span').text('Good Afternoon'+tmp_greeting_words);
+    } else {
+        $('#time_content_greeting').find('span').text('Good Evening'+tmp_greeting_words);
+    }
 }
 
+
 $(window).on("load", function() {
-    $('#freetab_main').hide();
-    $('.ackground-img').hide();
-
     setBackgroundImg();
-    $('.background-img').fadeIn('2000');
+    setGreetingName();
     start();
-    $('#freetab_main').fadeIn('3000');
-
-
-    // Take action when the image has loaded
-
 });

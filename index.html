@@ -25,11 +25,10 @@
     </div>
     <div id="background_shadow" style="display:none;"></div>
 
-
     <div id="freetab_main" class="cover-container d-flex h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto" style="max-width:100%;overflow-wrap: break-word; font-size: 80%; min-height:90px;">
             <div class="quote-box">
-                <label id='quote-text' class="text-align-top text-align-center" style="max-width:400px; overflow-wrap: break-word;">
+                <label id='quote-text' class="text-align-top text-align-center" style="max-width:500px; overflow-wrap: break-word;">
                 </label>
             </div>
         </header>
@@ -39,28 +38,28 @@
         </div>
 
         <div class="setting-box" style="">
-            <a tabindex="0" class="btn "id="setting_icon"  data-container="body" data-toggle="popover" data-placement="bottom" >
+            <a  class="btn setting-icon" id="setting_icon"  data-container="body" data-toggle="popover" data-placement="bottom" >
                 <i class="fas fa-wrench" style="color:white"></i>
             </a>
 
-            <a tabindex="0" class="btn" id="stopwatch_icon">
+            <a class="btn setting-icon" id="stopwatch_icon">
                 <i class="fas fa-stopwatch" style="color:white"></i>
             </a>
 
-            <a tabindex="0" class="btn" id="link_icon" data-toggle="link_popover" data-placement="bottom">
+            <a class="btn setting-icon" id="link_icon" data-toggle="link_popover" data-placement="bottom">
                 <i class="fas fa-link" style="color:white"></i>
             </a>
 
-            <a tabindex="0" class="btn" id="time_date_icon" style="display:none;">
+            <a class="btn setting-icon" id="time_date_icon" style="display:none;">
                 <i class="fas fa-clock" style="color:white"></i>
             </a>
 
-            <a tabindex="0" class="btn" id="calendar_countdown_icon" data-toggle="countdown_popover" data-placement="bottom" >
-                <i class="fas fa-calendar-check" style="color:white"></i>
+            <a class="btn setting-icon"  data-toggle="countdown_popover" data-placement="bottom" >
+                <i class="fas fa-calendar-check" id="calendar_countdown_icon" style="color:white;display:none;"></i>
             </a>
 
-            <a tabindex="0" class="btn" id="world_time_icon" data-toggle="world_time_popover" data-placement="bottom" >
-                <i class="fas fa-globe" style="color:white"></i>
+            <a  class="btn setting-icon"  data-toggle="world_time_popover" data-placement="bottom" >
+                <i class="fas fa-globe" id="world_time_icon" style="color:white; display:none;"></i>
             </a>
 
             <form action="https://google.com/search" method="get" class="search_form">
@@ -130,7 +129,10 @@
             <div id="time_content" style="display:none;">
                 <h4 id="time_content_greeting" style="min-height:30px;"><span style="display:none;">Good Morning</span></h4>
                 <h1 id="time" style="min-height:150px;"></h1>
-                <h3 id = 'displaydate' style="height:50px;"></h3>
+                <div style="height:50px;">
+                    <h3 id = 'displaydate' ></h3>
+                </div>
+
             </div>
 
             <div id ='timer_div' style="color:white; display:none;">
@@ -256,6 +258,24 @@
                     <td class="setting-table-tr-label">
                         <label class="switch">
                             <input class = 'setting-check' id = 'quote_button' type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="setting-table-tr">
+                    <td>World Clock</td>
+                    <td class="setting-table-tr-label">
+                        <label class="switch">
+                            <input class = 'setting-check' id = 'world_time_button' type="checkbox" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr class="setting-table-tr">
+                    <td>Calendar CountDown</td>
+                    <td class="setting-table-tr-label">
+                        <label class="switch">
+                            <input class = 'setting-check' id = 'calendar_countdown_button' type="checkbox" checked>
                             <span class="slider round"></span>
                         </label>
                     </td>
