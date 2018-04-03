@@ -34,7 +34,14 @@
         </header>
 
         <div class="weather-box" style="">
-            <p id = 'weather'><img src="asset/img/loading_icon.svg" width="30px" height="30px"></p>
+            <a id="weather_box_icon "  data-container="body" data-toggle="weather_popover" data-placement="bottom" data-trigger="hover">
+                <p id = 'weather'><img src="asset/img/loading_icon.svg" width="30px" height="30px"></p>
+            </a>
+            <div style="display:none;" id="popover_weather_box">
+                <div class="popover_weather_box_contents">
+                    <img src="asset/img/loading_icon.svg" width="30px" height="30px"></p>
+                </div>
+            </div>
         </div>
 
         <div class="setting-box" style="">
@@ -204,12 +211,6 @@
         </ul>
         <!--<a href="" class="link-box-a">Add Link</a>-->
     </div>
-
-    <!--<div id="popover-countdown-box" style="display: none; ">-->
-        <!--<p>Date: <input type="text" class="datepicker"></p>-->
-    <!--</div>-->
-
-
     <div id="popover-setting-content" style="display: none;">
         <button class="tablink active" id="general_tab"><i class="fas fa-cogs"></i> <small>General</small></button>
         <button class="tablink" style="" id="user_tab"><i class="fas fa-user"></i> <small>User</small></button>

@@ -20,39 +20,54 @@ function getWeather() {
         degree_default = arr['degree_default'];
     }
 
-    if (lat>0 && long >0 ){
+    if (lat>0 && long >0 && weatherNeedsRefresh == true ){
         $.ajax({
             type: 'GET',
             url: 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+long+'&appid=6baf9f0c0f2e76f84d6ae6649fcfe9e3',
             success: function (data) {
                 tmp = data['main']['temp'] - 273.15;
+                tmp_max = data['main']['temp_max'] - 273.15;
+                tmp_min = data['main']['temp_min'] - 273.15;
                 if (degree_default === '\u2109\u0020')
                 {
                     tmp = tmp * 1.8 + 32;
+                    tmp_max = Math.round(tmp_max * 1.8 + 32);
+                    tmp_min = Math.round(tmp_min * 1.8 + 32);
                 }
-                html = '<h4 id="weather_header">'+Math.round(tmp)+' <span class="degree_default_text">'+degree_default+'</span></h4>';
-                html += '<div style="word-wrap: break-word; position:fixed;"><p class="weather_details" style="display:none;">'+data['name']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+data['weather'][0]['icon']+'.png" style="width:25%;height:25%;"> <br>';
-                html += 'Humidity: '+data['main']['humidity']+'%</p></div>';
+                // var tempobject = {
+                //     'set': '',
+                //     'unit': degree_default,
+                //     'temp':tmp,
+                //     'humidity': data['main']['humidity'],
+                //     'name': data['name'],
+                //     'country': data['sys']['country'],
+                //     'icon': data['weather'][0]['icon']
+                // };
                 //
-                var tempobject = {
-                    'set': html,
-                    'unit': degree_default,
-                    'temp':tmp,
-                    'humidity': data['main']['humidity'],
-                    'name': data['name'],
-                    'country': data['sys']['country'],
-                    'icon': data['weather'][0]['icon']
-                };
+                // localStorage.setItem('weather', JSON.stringify(tempobject));
 
+                var html_header = '<h4 id="weather_header">'+Math.round(tmp)+' <span class="degree_default_text">'+degree_default+'</span></h4>';
+                var html_content =
+                    '<div style="word-wrap: break-word; margin-top:-12px;">' +
+                    '<div class="weather_detail_content">' +
+                    '       <h6 style="border-bottom:1px grey solid;">' +
+                    '           <i class="fas fa-location-arrow fa-1x"></i>&nbsp;&nbsp;'+data['name']+
+                            '</h6>'
+                        +   '<p style="font-size:105%;"> '+data['weather'][0]['description']+' <img src="http://openweathermap.org/img/w/'+data['weather'][0]['icon']+'.png" style="width:40px;height:40px;"></p>'
+                            +'<p>'+'Humidity: '+data['main']['humidity']+ '%</p>'+
+                            '<p>'+'Winds: '+data['wind']['speed']+ ' m/s / Direction: '+ data['wind']['deg']+'&#176;</p>'+
+                            '<p>'+'Max Temp: '+tmp_max+ '<span class="degree_default_text">'+degree_default+'</span></p>'+
+                            '<p>'+'Min Temp: '+tmp_min+ '<span class="degree_default_text">'+degree_default+'</span></p>'+
+                    '</div>' +
+                    '</div>';
 
-                localStorage.setItem('weather', JSON.stringify(tempobject));
-                document.getElementById('weather').innerHTML = html;
+                $('#weather').html(html_header);
 
-                $('#weather_header').hover(function(){
-                    $('.weather_details').fadeIn();
-                }, function() {
-                    $('.weather_details').fadeOut();
-                });
+                if ($('.popover_weather_box_contents').length > 1) {
+                    $('.popover_weather_box_contents').empty();
+                    $('.popover_weather_box_contents').append(html_content);
+                    weatherNeedsRefresh = false;
+                }
             }
         });
     }
@@ -63,50 +78,10 @@ function changeWeatherUnit(unit) {
     {
         unit = '\u2103\u0020';
     }
+    weatherNeedsRefresh = true;
     localStorage.setItem('degree_default', JSON.stringify({'degree_default':unit}));
 
-    var weatherObject = localStorage.getItem('weather');
-
-    if (weatherObject != null) {
-        arr = JSON.parse(weatherObject);
-        temp = arr['temp'];
-        if (unit === '\u2103\u0020') {
-            if (arr['unit'] === '\u2109\u0020') {
-
-                temp = (temp-32) / (9/5);
-            }
-        } else {
-            if (arr['unit'] === '\u2103\u0020') {
-                temp = temp * 1.8 + 32;
-            }
-        }
-        html = '<h4 id="weather_header">'+Math.round(temp)+' <span class="degree_default_text">'+unit+'</span></h4>';
-        html += '<div style="word-wrap: break-word; position:fixed;"><p class="weather_details" style="display:none; ">'+arr['name']+'&nbsp; '+'<img src="http://openweathermap.org/img/w/'+arr['icon']+'.png" style="width:25%;height:25%;"> <br>';
-        html += 'Humidity: '+arr['humidity']+'%</p></div>';
-
-        var tempobject = {
-            'set': html,
-            'unit': unit,
-            'temp':temp,
-            'humidity': arr['humidity'],
-            'name': arr['name'],
-            'country': arr['country'],
-            'icon': arr['icon']
-        };
-
-
-        localStorage.setItem('weather', JSON.stringify(tempobject));
-        document.getElementById('weather').innerHTML = html;
-
-        $('#weather_header').hover(function(){
-            $('.weather_details').fadeIn();
-        }, function() {
-            $('.weather_details').fadeOut();
-        });
-
-    } else {
-        getWeather();
-    }
+    getWeather();
 
 
 }

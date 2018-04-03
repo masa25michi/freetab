@@ -232,6 +232,16 @@ ul {
     height:400px;
 }
 
+.popover.weather-popover{
+    /*position:fixed;*/
+    background-color: black;
+    overflow: auto;
+    min-width:200px;
+    border-width: 0px;
+    padding:1% 1% 1% 1%;
+    height: 172px;
+}
+
 .popover.countdown-popover{
     background-color: #09092a;
     min-width:12%;
@@ -241,6 +251,10 @@ ul {
     box-shadow: 1px 5px 8px 1px rgba(0, 0, 0, 0.5), 7px 20px 20px 7px rgba(0, 0, 0, 0.19);
 }
 
+.weather_detail_content > p {
+    margin:2px;
+    font-size: 90%;
+}
 .city_world_name {
     padding-top:5px;
 }
@@ -253,7 +267,6 @@ ul {
     border-bottom: 1px grey solid;
     /*border:1px red solid;*/
     height:30px;
-
     /*font-family: "Courier New", Courier, monospace;*/
 
 }

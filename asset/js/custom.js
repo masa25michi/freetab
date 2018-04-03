@@ -6,7 +6,7 @@ var dateFormat = 0; //0-> with second 1-> no second
 var hourFormat = 0; //0-> 24-hour 1-> 12-hour
 
 var showNews = false;
-
+var weatherNeedsRefresh = true;
 
 function start(){
 
@@ -21,6 +21,7 @@ function start(){
                 $(this).popover('hide');
             }
         });
+
     });
 
 
@@ -94,15 +95,15 @@ function initializeLocalStorage()
     var masatab_show_calendar_countdown_time = localStorage.getItem("show_calendar_countdown_time");
 
     if (masatab_weather != null) {
-        var masatab_weather_arr = JSON.parse(masatab_weather);
-        document.getElementById('weather').innerHTML = masatab_weather_arr['set'];
-        var temp = '';
-        if((degree_default)=='\u2103\u0020'){
-            temp = masatab_weather_arr['temp_c'];
-        }else{
-            temp = masatab_weather_arr['temp_f'];
-        }
-        $('#weather_header').text(temp);
+        // var masatab_weather_arr = JSON.parse(masatab_weather);
+        // document.getElementById('weather').innerHTML = masatab_weather_arr['set'];
+        // var temp = '';
+        // if((degree_default)=='\u2103\u0020'){
+        //     temp = masatab_weather_arr['temp_c'];
+        // }else{
+        //     temp = masatab_weather_arr['temp_f'];
+        // }
+        // $('#weather_header').text(temp);
     }
 
     if (masatab_show_world_time != null) {
@@ -375,6 +376,36 @@ function initialize()
         }
     });
 
+    $("[data-toggle=weather_popover]").popover({
+        html: true,
+        trigger: "manual",
+        template: '<div class="popover weather-popover">' +
+        '<h3 class="popover-title"></h3><div class="popover-content">'+$('#popover_weather_box').html()+'</div></div>',
+        content: function() {
+            getWeather();
+            $("[data-toggle=popover]").popover('hide');
+            $("[data-toggle=link_popover]").popover('hide');
+            $("[data-toggle=news_popover]").popover('hide');
+
+            return $('#popover_weather_box').html();
+        }
+    }).on("mouseenter", function () {
+
+        var _this = this;
+        $(this).popover("show");
+        $(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
+        });
+
+    }).on("mouseleave", function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!$(".popover:hover").length) {
+                $(_this).popover("hide");
+            }
+        }, 300);
+    });
+
     // $("[data-toggle=countdown_popover]").popover({
     //     html: true,
     //     template: '<div class="popover countdown-popover"><div class="arrow"></div>' +
@@ -580,7 +611,7 @@ function initialize()
     });
 
 
-    $('#background_shadow').show();
+
 }
 
 function getTime(){
@@ -744,14 +775,18 @@ function setBackgroundImg()
         url:img_url,
         type:'HEAD',
         error: function(){
-            //do something depressing
             $('.background-img > img').css('background-image', 'url("/asset/img/background.jpeg")');
+
         },
         success: function(e){
             $('.background-img > img').css('background-image', 'url("'+img_url+'")');
-            //do something cheerful :)
+
         }
     });
+    window.setInterval(function(){
+        $('#background_shadow').fadeIn();
+    },500);
+
 
 
 }
